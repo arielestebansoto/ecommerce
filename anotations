@@ -1,0 +1,21 @@
+Me falta instalar
+redux, prop-types
+
+CopyFiles
+MinizerCSS (sera necesario) css-minimizer-webpack-plugin
+file-loader
+Alias
+DotEnv
+BundleAnalyzerPlugin
+(js-portfolio)
+.env
+
+
+
+esLint
+react react-dom react-router-dom
+webpack webpack cli 
+loaders
+webpack dev server
+babel
+materialize
