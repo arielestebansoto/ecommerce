@@ -1,10 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import CarouselHome from '../components/CarouselHome'
 
 const Home = () => 
     (
     <div>
-        <h1>Bienvenido</h1>
+        <CarouselHome />
         <Link to="/login" > 
             <button>Login</button>
         </Link>

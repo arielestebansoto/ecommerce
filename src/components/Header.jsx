@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Sidenav } from 'materialize-css';
+import { Sidenav } from 'materialize-css'
 
 const Header = () => {
         let options = {
