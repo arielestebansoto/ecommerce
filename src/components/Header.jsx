@@ -1,6 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Sidenav } from 'materialize-css'
+import  SearchBar  from './SearchBar'
+import SendTo from './SendTo'
+
+import '../assets/styles/components/Header.scss'
 
 const Header = () => {
         let options = {
@@ -15,14 +19,21 @@ const Header = () => {
 return (
     <div>
             <nav>
-                <div className="nav-wrapper nav-fixed blue darken-2">
-                <a href="#" data-target="slide-out" className="sidenav-trigger"><i className="material-icons">menu</i></a>
-                <Link to="/" className="brand-logo">NOCommerce</Link>
-                <ul id="nav-mobile" className="right hide-on-med-and-down">
-                    <li><a href="/">Perfil</a></li>
-                </ul>
+                <div className="nav-wrapper nav-fixed blue darken-2 row">
+                    <div className="col s2">
+                        <a href="#" data-target="slide-out" className="sidenav-trigger"><i className="material-icons">menu</i></a>
+                    </div>
+                    <div className="col s8">
+                        <SearchBar />
+                    </div>
+                    <div className="col s2">
+                        <Link to="/cart">
+                            <i className="material-icons">shopping_cart</i>
+                        </Link>
+                    </div>
                 </div>
-        </nav>
+            </nav>
+            <SendTo />
 
         <ul id="slide-out" className="sidenav">
             <li><div className="user-view">
@@ -39,7 +50,6 @@ return (
             <li><a className="subheader">Subheader</a></li>
             <li><a className="waves-effect" href="#!">Third Link With Waves</a></li>
         </ul>
-
     </div>
     )
 }
