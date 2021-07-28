@@ -9,7 +9,7 @@ module.exports = {
         filename: "index.js",
         clean: true,
     },
-    name: "react-snippet",
+    name: "nocommerce",
     mode: "development",
     resolve: {
         extensions: [ ".js", ".jsx" ]

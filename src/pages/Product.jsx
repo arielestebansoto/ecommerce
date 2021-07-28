@@ -1,32 +1,31 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+
+import ProductStar from '../components/ProductStar'
 import CarouselProduct from '../components/CarouselProduct'
+import PurchaseDetails from '../components/PurchaseDetails'
+import ProductDetails from '../components/ProductDetails'
+import ProductQuestion from '../components/ProductQuestion'
 
 const Product = () => (
     <div className="container">
         <span>new || old | sold out</span>
         <h5>Product Title</h5>
-        <div>
-            <i className="material-icons">start</i>
-            <i className="material-icons">start</i>
-            <i className="material-icons">start</i>
-            <i className="material-icons">start</i>
-            <i className="material-icons">start</i>
-        </div>
-        
+        <ProductStar />
         <CarouselProduct />
+        <PurchaseDetails />
+        <ProductDetails />
+        <ProductQuestion />
 
-        <Link to="/payment">
-            <button>Buy</button>
-        </Link>
+        <div className="questions">
+            {/* 
+            input
+            button preguntar
+            comentarios
+            */}
+        </div>
+        <div className="reviews">
 
-        <Link to="/shoppingcart">
-            <button>Add to cart</button>
-        </Link>
-
-        <Link to="/">
-            <button>Home</button>
-        </Link>
+        </div>
     </div>
 )
 export default Product
