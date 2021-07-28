@@ -9,6 +9,8 @@ import Card from '../components/Card'
 import FormRegister from '../components/FormRegister'
 import FormLogin from '../components/FormLogin'
 
+import ProductImageGalery from '../components/ProductImageGalery'
+
 const Home = () => 
     (
     <div>
@@ -20,6 +22,7 @@ const Home = () =>
             <Card />
             <Card />
         </CarouselProducts>
+        <ProductImageGalery />
     </div>    
 )
 

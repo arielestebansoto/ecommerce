@@ -1,6 +1,11 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
+
+import '../assets/styles/global.scss'
+import 'materialize-css/dist/css/materialize.css'
+import "materialize-css/dist/js/materialize.js";
+
 import Home from '../pages/Home'
 import Login from '../pages/Login'
 import Product from '../pages/Product'
