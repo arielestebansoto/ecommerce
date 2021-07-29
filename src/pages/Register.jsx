@@ -1,17 +1,12 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import FormRegister from '../components/FormRegister'
 
 const Register = () => (
-    <div>
-        <h1>Register for NOTbuy awesome products</h1>    
-        <form action="submit">
-            <input type="email" placeholder="email" />
-            <input type="password" placeholder="password" />
-            <input type="password" placeholder="confirm password" />
-        </form>
-        <Link to="/">
-            <button>HOME</button>
-        </Link>
+    <div className="container">
+        <div className="row">
+            <h5>Register for NOTbuy awesome products</h5>    
+        </div>
+        <FormRegister />
     </div>
 )
 export default Register

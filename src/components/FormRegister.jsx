@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom'
 import '../assets/styles/components/Form.scss'
 
 const FormRegister = () => (
-    <div className="container Form">
-        <div className="row">
+        <div className="row z-depth-2 Form">
             <form className="col s12 m10 offset-m1 l8 offset-l2">
                 <div className="row">
                     <div className="input-field col s12">
@@ -44,14 +43,13 @@ const FormRegister = () => (
                 <div className="row">
                     <Link to="/">
                         <button 
-                            className="waves-effect waves-light btn-large blue darken-2"
+                            className="waves-effect waves-light btn blue darken-2"
                             type="submit"
                             >Continuar</button>
                     </Link>
                 </div>
             </form>
         </div>
-    </div>
 )
 
 export default FormRegister
