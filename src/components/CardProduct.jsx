@@ -1,8 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const Card = () => (
-
+const CardProduct = () => (
+    
+    <Link to="/product">
         <div className="card carousel-item ">
             <div className="card-image">
                 <img src="/" />
@@ -11,13 +12,10 @@ const Card = () => (
                 <span className="card-title">Product Name</span>
                 <p>$300000.</p>
                 <div className="row">
-                <Link to="/product">
-                    <button className="btn blue">see product</button>
-                </Link>
                 </div>
             </div>
         </div>
-
+    </Link>
     )
 
-export default Card
+export default CardProduct
