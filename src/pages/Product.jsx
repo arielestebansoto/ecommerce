@@ -8,7 +8,6 @@ import ProductQuestion from '../components/ProductQuestion'
 
 const Product = () => (
     <div className="container">
-        <span>new || old | sold out</span>
         <h5>Product Title</h5>
         <ProductStar />
         <ProductImageGalery />

@@ -9,9 +9,11 @@ const CarouselProducts = (props) => {
         } );
       });
     return (
-        <div className="carousel CarouselProducts blue lighten-2">
-             {props.children}
-        </div>    
+        <div className="container">
+            <div className="carousel CarouselProducts z-depth-2">
+                {props.children}
+            </div>    
+        </div>
     )
 }
 export default CarouselProducts
