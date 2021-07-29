@@ -7,17 +7,8 @@ import SideNav from './SideNav'
 
 import '../assets/styles/components/Header.scss'
 
-const Header = () => {
-        let options = {
-            edge: 'left',
-            onOpenStart: false,
-        }
-    document.addEventListener('DOMContentLoaded', function() {
-        var elems = document.querySelectorAll('.sidenav');
-        var instances = M.Sidenav.init(elems, options);
-      });
-
-return (
+const Header = () => 
+(
     <div>
             <nav>
                 <div className="nav-wrapper nav-fixed blue darken-2 row">
@@ -40,6 +31,5 @@ return (
         
     </div>
     )
-}
 
 export default Header
