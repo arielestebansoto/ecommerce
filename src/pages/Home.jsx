@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import CarouselHome from '../components/CarouselHome'
 import CarouselProducts from '../components/CarouselProducts'
 import Card from '../components/Card'
+import Footer from '../components/Footer'
 
 const Home = () => 
     (
@@ -16,6 +17,7 @@ const Home = () =>
             <Card />
             <Card />
         </CarouselProducts>
+        <Footer />
     </div>    
 )
 
