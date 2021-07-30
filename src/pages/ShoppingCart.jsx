@@ -1,18 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import CardShoppingCart from '../components/CardShoppingCart'
+
 const ShoppingCart = () => (
-    <div>
-        <h1>Shopping Cart</h1>
-        <div>
-            <img/>
-            <span>eliminar</span>
-            <span>mas productos del vendedor</span>
-            <span>comprar ahora</span>
+    <div className="container">
+        <CardShoppingCart /> 
+
+        <div className="row">
+            <Link to="shippingdetails">
+                <button className="btn blue darken-2">next</button>
+            </Link>
         </div>
-        <Link to="/success">
-            <button>Confirm</button>
-        </Link>
     </div>
 )
 export default ShoppingCart

@@ -12,7 +12,7 @@ const PurchaseDetails = () => (
             <span>Stock available: 9999</span>
         </div>
         <div className="row">
-            <Link to="payment">
+            <Link to="shoppingcart">
                 <button className="btn waves-effect waves-light blue darken-2 btn-large" type="submit" name="buy">Buy</button>
             </Link>
         </div>
