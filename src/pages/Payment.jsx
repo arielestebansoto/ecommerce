@@ -1,21 +1,21 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import PaymentMethod from '../components/PaymentMethod'
+import Sumary from '../components/Sumary'
+
 const Payment = () => (
-    <div>
-        <h1>Payment Options</h1>
-        <Link to="/product">
-            <button>
-                Return to product
-            </button>
+    <div className="container">
+        <h5>Payment Options</h5>
+        <PaymentMethod />
+        <Sumary />
+        <Link to="/success">
+            <button className="btn blue darken-4">BUY</button>
         </Link>
-        <Link to="/shoppingcart">
-            <button>
-                See your Shooping Cart
+        <Link to="/shippingdetails">
+            <button className="btn blue darken-2">
+                Return
             </button>
-        </Link>
-        <Link to="/">
-            <button>Home</button>
         </Link>
     </div>
 )
