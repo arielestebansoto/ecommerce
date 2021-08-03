@@ -1,15 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import ShippingDetailsComponent from '../components/ShippingDetailsComponent'
 
 const ShippingDetails = () => (
-    <div>
-        <h5>Shipping Details</h5>
-        <Link to="/payment">
-            <button className="btn blue darken-2">next</button>
-        </Link>
-        <Link to="/shoppingcart">
-            <button className="btn blue darken-2 disabled">prev</button>
-        </Link>
+    <div className="container">
+        <ShippingDetailsComponent />
+        <Link to="/payment" >
+            <button className="btn blue darken-4">next</button>
+            </Link>
     </div>
 )
 
