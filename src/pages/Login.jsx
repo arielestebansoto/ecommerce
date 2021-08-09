@@ -7,7 +7,7 @@ const Login = () => (
        <FormLogin />
        <div className="row center">
             <Link to="/register" >
-                <button className="btn blue lighten-2">Don't have acount? Register</button>
+                <button className="btn-flat blue-text">Don't have acount? Register</button>
             </Link>
        </div>
     </div>
