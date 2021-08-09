@@ -1,0 +1,8 @@
+{
+    "login": false,
+    "firstName": "",
+    "lastName": "",
+    "email": "",
+    "password": "",
+    "shoppingCart": [] 
+}

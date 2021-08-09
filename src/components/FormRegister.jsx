@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+
 import '../assets/styles/components/Form.scss'
 
 class FormRegister extends React.Component {

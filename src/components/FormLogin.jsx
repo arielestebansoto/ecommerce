@@ -1,12 +1,14 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 import '../assets/styles/components/Form.scss'
+
+import storage from '../storage/storage.json'
 
 class FormLogin extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
+            login: false,
             email: '',
             password: '',
         }
@@ -20,7 +22,12 @@ class FormLogin extends React.Component {
     }
     handleSubmit(event) {
         event.preventDefault()
-        console.log(`loged : ${this.state.email}, ${this.state.password}`)
+        this.setState({
+            login: true,
+        })
+        storage.login = this.state.login
+        console.log(this.state)
+        console.log(`storage: ${storage.login} `)
     }
     render() {
         return (
