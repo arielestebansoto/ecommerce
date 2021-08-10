@@ -1,4 +1,4 @@
-{
+const storage = {
     "login": false,
     "firstName": "",
     "lastName": "",
@@ -6,3 +6,4 @@
     "password": "",
     "shoppingCart": [] 
 }
+export default storage

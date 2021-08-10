@@ -1,8 +1,5 @@
 import React from 'react'
-
 import '../assets/styles/components/Form.scss'
-
-import storage from '../storage/storage.json'
 
 class FormLogin extends React.Component {
     constructor(props) {
@@ -17,17 +14,11 @@ class FormLogin extends React.Component {
     }
     handleChange(event) {
         this.setState({
-           [event.target.name]: event.target.value
+            [event.target.name]: event.target.value 
         })
     }
     handleSubmit(event) {
         event.preventDefault()
-        this.setState({
-            login: true,
-        })
-        storage.login = this.state.login
-        console.log(this.state)
-        console.log(`storage: ${storage.login} `)
     }
     render() {
         return (
@@ -66,8 +57,9 @@ class FormLogin extends React.Component {
                         <div className="row">
                                 <button 
                                     className="waves-effect waves-light btn blue darken-2"
-                                    type="submit">
-                                        Login
+                                    type="submit"
+                                >
+                                    Login
                                 </button>
                         </div>
                     </form>
