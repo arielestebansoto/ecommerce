@@ -1,5 +1,7 @@
 import React from 'react'
 import '../assets/styles/components/Form.scss'
+import { connect } from 'react-redux'
+import { loginRequest } from '../actions'
 
 class FormLogin extends React.Component {
     constructor(props) {
@@ -11,14 +13,19 @@ class FormLogin extends React.Component {
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleLogin = this.handleLogin.bind(this)
     }
     handleChange(event) {
         this.setState({
             [event.target.name]: event.target.value 
         })
     }
+    handleLogin() {
+        this.props.loginRequest(true)
+    }
     handleSubmit(event) {
         event.preventDefault()
+        this.handleLogin()
     }
     render() {
         return (
@@ -67,5 +74,7 @@ class FormLogin extends React.Component {
         )
     } 
 }
-
-export default FormLogin
+const mapDispatchToProps = {
+    loginRequest,
+}
+export default connect(null, mapDispatchToProps)(FormLogin)

@@ -1,6 +1,20 @@
 import React from 'react'
 import { render } from 'react-dom'
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import initialState from './initialState'
+import reducer from './reducers'
 
 import App from './container/App'
 
-render(<App />, document.getElementById('app'))
+const store = createStore(reducer, initialState)
+
+console.log(store.getState())
+store.subscribe( () => console.log(store.getState()))
+
+render(
+    <Provider store={store}>
+        <App />
+    </Provider>,
+    document.getElementById('app')
+)
