@@ -7,7 +7,6 @@ class FormLogin extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            login: false,
             email: '',
             password: '',
         }
@@ -74,7 +73,12 @@ class FormLogin extends React.Component {
         )
     } 
 }
+const mapStateToProps = state => {
+    return {
+        isLogin: state.isLogin
+    }
+}
 const mapDispatchToProps = {
     loginRequest,
 }
-export default connect(null, mapDispatchToProps)(FormLogin)
+export default connect(mapStateToProps, mapDispatchToProps)(FormLogin)
