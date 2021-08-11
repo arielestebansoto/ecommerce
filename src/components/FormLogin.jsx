@@ -1,7 +1,7 @@
 import React from 'react'
 import '../assets/styles/components/Form.scss'
 import { connect } from 'react-redux'
-import { loginRequest } from '../actions'
+import { loginRequest, sendLoginForm } from '../actions'
 
 class FormLogin extends React.Component {
     constructor(props) {
@@ -13,6 +13,7 @@ class FormLogin extends React.Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleLogin = this.handleLogin.bind(this)
+        this.handleSendLoginForm = this.handleSendLoginForm.bind(this)
     }
     handleChange(event) {
         this.setState({
@@ -22,9 +23,15 @@ class FormLogin extends React.Component {
     handleLogin() {
         this.props.loginRequest(true)
     }
+    handleSendLoginForm() {
+        const email = this.state.email
+        const password = this.state.password
+        this.props.sendLoginForm(email, password)
+    }
     handleSubmit(event) {
         event.preventDefault()
         this.handleLogin()
+        this.handleSendLoginForm()
     }
     render() {
         return (
@@ -80,5 +87,6 @@ const mapStateToProps = state => {
 }
 const mapDispatchToProps = {
     loginRequest,
+    sendLoginForm,
 }
 export default connect(mapStateToProps, mapDispatchToProps)(FormLogin)

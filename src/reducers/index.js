@@ -4,6 +4,11 @@ const reducer = (state, action) => {
             return {
                 isLogin: action.payload,
             }
+        case 'SEND_LOGIN_FORM': 
+            return {
+               email: action.email,
+               password: action.password
+            }
         default: 
             return state
     }
