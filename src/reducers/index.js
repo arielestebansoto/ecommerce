@@ -2,12 +2,19 @@ const reducer = (state, action) => {
     switch (action.type) {
         case 'LOGIN_REQUEST':
             return {
-                isLogin: action.payload,
+                ...state,
+                user : {
+                    ...state.user,
+                    isLogin: action.payload
+                } 
             }
         case 'SEND_LOGIN_FORM': 
             return {
-               email: action.email,
-               password: action.password
+                ...state,
+                user : {
+                    ...state.user,
+                    ...action.payload
+                }
             }
         default: 
             return state

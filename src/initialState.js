@@ -1,10 +1,12 @@
 const initialState = {
-    isLogin: false,
-    firstName: '',
-    lastName: '',
-    email: '',
-    password: '',
-    tou: false,
+    user: {
+        isLogin: false,
+        firstName: '',
+        lastName: '',
+        email: '',
+        password: '',
+        tou: false,
+    },
     shoppingCart: [],
 }
 export default initialState
