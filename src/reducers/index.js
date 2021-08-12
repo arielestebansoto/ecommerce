@@ -16,6 +16,14 @@ const reducer = (state, action) => {
                     ...action.payload
                 }
             }
+        case 'SEND_REGISTER_FORM':
+            return {
+                ...state,
+                user: {
+                    ...state.user,
+                    ...action.payload
+                }
+            }
         default: 
             return state
     }

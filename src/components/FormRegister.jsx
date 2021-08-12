@@ -1,4 +1,6 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { sendRegisterForm } from '../actions'
 
 import '../assets/styles/components/Form.scss'
 
@@ -10,13 +12,14 @@ class FormRegister extends React.Component {
             lastName: '',
             email: '',
             password: '',
-            terms: false,
+            tou: false,
         }
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleSendRegisterForm = this.handleSendRegisterForm.bind(this)
     }
     handleChange(event) {
-        if(event.target.name === 'terms') {
+        if(event.target.name === 'tou') {
             this.setState({
                 [event.target.name]: event.target.checked
             })
@@ -26,8 +29,12 @@ class FormRegister extends React.Component {
             })
         }
     }
+    handleSendRegisterForm(form) {
+        this.props.sendRegisterForm(form)
+    }
     handleSubmit(event) {
         event.preventDefault()
+        this.handleSendRegisterForm(this.state)
     }
     render() {
         return (
@@ -92,11 +99,11 @@ class FormRegister extends React.Component {
                     <div className="row">
                         <label>
                             <input 
-                                name="terms"
+                                name="tou"
                                 type="checkbox"
                                 onChange={this.handleChange}
                             />
-                            <span>Acepto los <strong>Términos y Condiciones</strong> y autorizo el uso de mis datos de acuerdo con la <strong>Declaración de Privacidad</strong></span>
+                            <span>Acepto los <strong>Términos y Condiciones</strong> y autorizo el uso de mis datou de acuerdo con la <strong>Declaración de Privacidad</strong></span>
                         </label>
                     </div>
                     <div className="row">
@@ -112,4 +119,7 @@ class FormRegister extends React.Component {
         )
     }
 }
-export default FormRegister
+const mapDispatchToProps = {
+    sendRegisterForm,
+}
+export default connect(null, mapDispatchToProps)(FormRegister)

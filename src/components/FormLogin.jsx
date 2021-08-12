@@ -23,12 +23,12 @@ class FormLogin extends React.Component {
     handleLogin() {
         this.props.loginRequest(true)
     }
-    handleSendLoginForm() {
-        this.props.sendLoginForm(this.state)
+    handleSendLoginForm(form) {
+        this.props.sendLoginForm(form)
     }
     handleSubmit(event) {
         event.preventDefault()
-        this.handleSendLoginForm()
+        this.handleSendLoginForm(this.state)
         this.handleLogin()
     }
     render() {
