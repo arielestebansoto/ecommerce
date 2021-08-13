@@ -1,7 +1,8 @@
 import React from 'react'
 import '../assets/styles/components/Form.scss'
 import { connect } from 'react-redux'
-import { loginRequest, sendLoginForm } from '../actions'
+import { loginSuccessful, loginRequest } from '../actions'
+import { withRouter } from 'react-router-dom'
 
 class FormLogin extends React.Component {
     constructor(props) {
@@ -12,24 +13,17 @@ class FormLogin extends React.Component {
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleLogin = this.handleLogin.bind(this)
-        this.handleSendLoginForm = this.handleSendLoginForm.bind(this)
     }
     handleChange(event) {
         this.setState({
             [event.target.name]: event.target.value 
         })
     }
-    handleLogin() {
-        this.props.loginRequest(true)
-    }
-    handleSendLoginForm(form) {
-        this.props.sendLoginForm(form)
-    }
     handleSubmit(event) {
         event.preventDefault()
-        this.handleSendLoginForm(this.state)
-        this.handleLogin()
+        this.props.loginRequest(this.state)
+        this.props.loginSuccessful(true)
+        this.props.history.push('/')
     }
     render() {
         return (
@@ -78,13 +72,8 @@ class FormLogin extends React.Component {
         )
     } 
 }
-const mapStateToProps = state => {
-    return {
-        isLogin: state.isLogin
-    }
-}
 const mapDispatchToProps = {
     loginRequest,
-    sendLoginForm,
+    loginSuccessful,
 }
-export default connect(mapStateToProps, mapDispatchToProps)(FormLogin)
+export default withRouter(connect(null, mapDispatchToProps)(FormLogin))

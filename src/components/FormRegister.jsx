@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { sendRegisterForm } from '../actions'
+import { loginSuccessful, registerRequest } from '../actions'
+import { withRouter } from 'react-router'
 
 import '../assets/styles/components/Form.scss'
 
@@ -16,7 +17,6 @@ class FormRegister extends React.Component {
         }
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
-        this.handleSendRegisterForm = this.handleSendRegisterForm.bind(this)
     }
     handleChange(event) {
         if(event.target.name === 'tou') {
@@ -29,12 +29,11 @@ class FormRegister extends React.Component {
             })
         }
     }
-    handleSendRegisterForm(form) {
-        this.props.sendRegisterForm(form)
-    }
     handleSubmit(event) {
         event.preventDefault()
-        this.handleSendRegisterForm(this.state)
+        this.props.registerRequest(this.state)
+        this.props.loginSuccessful(true)
+        this.props.history.push('/')
     }
     render() {
         return (
@@ -120,6 +119,7 @@ class FormRegister extends React.Component {
     }
 }
 const mapDispatchToProps = {
-    sendRegisterForm,
+    registerRequest,
+    loginSuccessful,
 }
-export default connect(null, mapDispatchToProps)(FormRegister)
+export default withRouter(connect(null, mapDispatchToProps)(FormRegister))
