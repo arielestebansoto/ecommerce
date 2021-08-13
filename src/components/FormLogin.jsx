@@ -1,7 +1,7 @@
 import React from 'react'
 import '../assets/styles/components/Form.scss'
 import { connect } from 'react-redux'
-import { loginSuccessful, loginRequest } from '../actions'
+import { logRequest, loginRequest } from '../actions'
 import { withRouter } from 'react-router-dom'
 
 class FormLogin extends React.Component {
@@ -22,7 +22,7 @@ class FormLogin extends React.Component {
     handleSubmit(event) {
         event.preventDefault()
         this.props.loginRequest(this.state)
-        this.props.loginSuccessful(true)
+        this.props.logRequest(true)
         this.props.history.push('/')
     }
     render() {
@@ -74,6 +74,6 @@ class FormLogin extends React.Component {
 }
 const mapDispatchToProps = {
     loginRequest,
-    loginSuccessful,
+    logRequest,
 }
 export default withRouter(connect(null, mapDispatchToProps)(FormLogin))

@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { loginSuccessful, registerRequest } from '../actions'
+import { logRequest, registerRequest } from '../actions'
 import { withRouter } from 'react-router'
 
 import '../assets/styles/components/Form.scss'
@@ -32,7 +32,7 @@ class FormRegister extends React.Component {
     handleSubmit(event) {
         event.preventDefault()
         this.props.registerRequest(this.state)
-        this.props.loginSuccessful(true)
+        this.props.logRequest(true)
         this.props.history.push('/')
     }
     render() {
@@ -120,6 +120,6 @@ class FormRegister extends React.Component {
 }
 const mapDispatchToProps = {
     registerRequest,
-    loginSuccessful,
+    logRequest,
 }
 export default withRouter(connect(null, mapDispatchToProps)(FormRegister))

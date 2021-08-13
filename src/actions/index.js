@@ -1,5 +1,5 @@
-export const loginSuccessful = payload => ({
-    type: 'LOGIN_SUCCESSFUL',
+export const logRequest = payload => ({
+    type: 'LOG_REQUEST',
     payload
 })
 export const loginRequest = payload => ({
@@ -8,5 +8,9 @@ export const loginRequest = payload => ({
 })
 export const registerRequest = payload => ({
     type: 'REGISTER_REQUEST',
+    payload
+})
+export const logoutRequest = payload => ({
+    type: 'LOGOUT_REQUEST',
     payload
 })
