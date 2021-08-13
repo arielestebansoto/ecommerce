@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { logRequest } from '../actions'
+import { logOutRequest } from '../actions'
 
 const SideNav = props => {
     const { user } = props
@@ -15,10 +15,10 @@ const SideNav = props => {
     });
 
     function handleLogOut() {
-        props.logRequest(false)
+        props.logOutRequest()
     }
     return (
-        <ul id="slide-out" className="SideNav sidenav">
+        <ul id="slide-out" className="SideNav sidenav"> 
             <li>
                 <div className="user-view">
                     <div className="background blue lighten-4"> </div>
@@ -42,7 +42,7 @@ const SideNav = props => {
             <li><div className="divider"></div></li>
             {
                 user.isLogin ?
-                    <li className="sidenav-close" onClick={handleLogOut}><i className="material-icons">exit_to_app</i>Logout</li>
+                    <li className="sidenav-close" onClick={handleLogOut}><a><i className="material-icons">exit_to_app</i>Logout</a></li>
                 : null
             }
         </ul>
@@ -51,10 +51,10 @@ const SideNav = props => {
  
 const mapStateToProps = state =>  {
     return {
-        user: state.user
+        user: state.userReducer
     }
 }
 const mapDispatchToProps = {
-    logRequest,
+    logOutRequest,
 }
 export default connect(mapStateToProps, mapDispatchToProps)(SideNav)
