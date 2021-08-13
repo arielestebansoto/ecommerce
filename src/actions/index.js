@@ -1,12 +1,12 @@
+export const loginSuccessful = payload => ({
+    type: 'LOGIN_SUCCESSFUL',
+    payload
+})
 export const loginRequest = payload => ({
     type: 'LOGIN_REQUEST',
     payload
 })
-export const sendLoginForm = payload => ({
-    type: 'SEND_LOGIN_FORM',
-    payload
-})
-export const sendRegisterForm = payload => ({
-    type: 'SEND_REGISTER_FORM',
+export const registerRequest = payload => ({
+    type: 'REGISTER_REQUEST',
     payload
 })

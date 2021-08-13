@@ -6,6 +6,7 @@ const initialState = {
         email: '',
         password: '',
         tou: false,
+        location: '',
     },
     shoppingCart: [],
 }

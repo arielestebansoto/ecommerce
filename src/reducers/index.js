@@ -1,6 +1,6 @@
 const reducer = (state, action) => {
     switch (action.type) {
-        case 'LOGIN_REQUEST':
+        case 'LOGIN_SUCCESSFUL':
             return {
                 ...state,
                 user : {
@@ -8,7 +8,7 @@ const reducer = (state, action) => {
                     isLogin: action.payload
                 } 
             }
-        case 'SEND_LOGIN_FORM': 
+        case 'LOGIN_REQUEST': 
             return {
                 ...state,
                 user : {
@@ -16,7 +16,7 @@ const reducer = (state, action) => {
                     ...action.payload
                 }
             }
-        case 'SEND_REGISTER_FORM':
+        case 'REGISTER_REQUEST':
             return {
                 ...state,
                 user: {
