@@ -1,3 +1,4 @@
+import { LOG_REQUEST, LOGIN_REQUEST, REGISTER_REQUEST, LOGOUT_REQUEST } from "../actionsTypes"
 const INITIAL_STATE = {
     isLogin: false,
     firstName: '',
@@ -10,19 +11,19 @@ const INITIAL_STATE = {
 
 const userReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
-        case 'LOGOUT_REQUEST':
+        case LOGOUT_REQUEST:
             return INITIAL_STATE
-        case 'LOG_REQUEST':
+        case LOG_REQUEST:
             return {
                 ...state,
                 isLogin: action.payload
             }
-        case 'LOGIN_REQUEST': 
+        case LOGIN_REQUEST: 
             return {
                 ...state,
                 ...action.payload
                 }
-        case 'REGISTER_REQUEST':
+        case REGISTER_REQUEST:
             return {
                 ...state,
                 ...action.payload
