@@ -14,6 +14,7 @@ import ShoppingCart from '../pages/ShoppingCart'
 import ShippingDetails from '../pages/ShippingDetails'
 import Success from '../pages/Success'
 import Register from '../pages/Register'
+import Account from '../pages/Account'
 
 import Header from '../components/Header'
 
@@ -30,6 +31,7 @@ const App = () => {
             <Route exact path="/shippingdetails" component={ShippingDetails}/>   
             <Route exact path="/success" component={Success}/> 
             <Route exact path="/register" component={Register}/> 
+            <Route exact path="/account" component={Account} />
         </Switch>
     </BrowserRouter>
  )

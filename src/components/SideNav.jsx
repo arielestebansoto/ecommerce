@@ -31,13 +31,16 @@ const SideNav = props => {
                                 <a href="#email"><span className="white-text email">{ user.email }</span></a>
                             </div>
                         :
-                            <div>
-                                <Link to='/login' className='btn-small blue darken-2 sidenav-close'>Login</Link>
-                                <Link to='/register' className='btn-small sidenav-close blue lighten-2'>Register</Link>
-                            </div>
+                            <div style={{blockSize: '14px'}}></div>
                 }
                 </div>
             </li>
+            {
+                user.isLogin ?
+                <li className="sidenav-close"><Link to='/account'><i className="material-icons">account_circle</i>My Account</Link></li>    
+                :
+                <li className="sidenav-close"><Link to='/login'><i className="material-icons">person</i>Login | Register</Link></li>    
+            }
             <li className="sidenav-close"><Link to="/"><i className="material-icons">home</i>Home</Link></li>
             <li><div className="divider"></div></li>
             {
