@@ -9,19 +9,13 @@ import carousel4 from '../assets/pictures/img/carouselhome/carousel-4.png'
 import carousel5 from '../assets/pictures/img/carouselhome/carousel-5.png'
 
 class CarouselHome extends React.Component {
-    constructor() {
-        super()
-    }
-    componentDidMount() {
-        document.addEventListener('DOMContentLoaded', function() {
-            var elems = document.querySelectorAll('.CarouselHome');
-            var instances = M.Carousel.init(elems, {
-                fullWidth: true,
-                indicators: true,
-            });
+    componentDidMount() {   
+        const elems = document.querySelectorAll('.CarouselHome');
+        const instances = M.Carousel.init(elems, {
+            fullWidth: true,
+            indicators: true,
         });
     }
-
     render() {
         return (
             <div className="carousel CarouselHome carousel-slider">

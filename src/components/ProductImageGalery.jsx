@@ -1,17 +1,18 @@
 import React from 'react'
+import { useEffect } from 'react';
 
 import '../assets/styles/components/ProductImageGalery.scss'
 
 const ProductImageGalery = () => {
-    document.addEventListener('DOMContentLoaded', function() {
-        var elems = document.querySelectorAll('.ProductImageGalery');
-        var instances = M.Carousel.init(elems, {
-          dist: 0,
-          shift: 10,
-          indicators: true,
-          noWrap: true,
-        });
-      });
+  useEffect( () => {
+    const elems = document.querySelectorAll('.ProductImageGalery');
+    const instances = M.Carousel.init(elems, {
+      dist: 0,
+      shift: 10,
+      indicators: true,
+      noWrap: true,
+    });
+  })
     return (
       <div className="row z-depth-2">
         <div className="carousel carousel-slider ProductImageGalery">
@@ -22,6 +23,6 @@ const ProductImageGalery = () => {
           <a className="carousel-item" href="#five!"><img src="https://lorempixel.com/250/250/nature/5" /></a>
       </div>
       </div>
-)
+  )
 }
 export default ProductImageGalery
