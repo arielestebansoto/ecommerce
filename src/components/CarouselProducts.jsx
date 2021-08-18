@@ -22,6 +22,7 @@ class CarouselProducts extends React.Component {
         this.props.getProductsLimit()
     }
     render() {
+        console.log(this.props)
         return (
         /*  
             <div className="container">
