@@ -4,6 +4,8 @@ import * as productsActions  from '../actions/productsActions'
 
 import '../assets/styles/components/CarouselProducts.scss'
 
+import CardProduct from './CardProduct';
+
 class CarouselProducts extends React.Component {
 
     carouselConfig = () => {
@@ -15,25 +17,30 @@ class CarouselProducts extends React.Component {
             noWrap: true,
         } );
     }
-    async componentDidMount() {
-        this.carouselConfig()
+    componentDidMount() {
         this.props.getProductsLimit()
     }
     render() {
+        console.log(this.props)
         return (
+/*             <div className="container">
+                <div className="carousel CarouselProducts  z-depth-2">
+                </div> 
+            </div> */
             <div className="container">
-                <div className="carousel CarouselProducts z-depth-2">
-                    {this.props.children}
-                </div>    
+                <h3>Aca tiene que ir algo!!!!</h3>
+                { 
+                    this.props.productsReducer.map( card => 
+                        <CardProduct {...card} key={card.id}/>
+                    )
+                }
             </div>
         )
     }
 }
 
-const mapStateToProps = state => {
-    return {
-        product: state.productsReducer
-    }
+const mapStateToProps =  state  => {
+    return state
 }
 
 export default connect(mapStateToProps, productsActions)(CarouselProducts)
