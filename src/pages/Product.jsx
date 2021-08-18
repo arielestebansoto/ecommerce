@@ -7,17 +7,19 @@ import ProductDetails from '../components/ProductDetails'
 import ProductQuestion from '../components/ProductQuestion'
 import Footer from '../components/Footer'
 
-const Product = () => (
-    <div>
-        <div className="container">
-            <h5>Product Title</h5>
-            <ProductStar />
-            <ProductImageGalery />
-            <PurchaseDetails />
-            <ProductDetails />
-            <ProductQuestion />
+const Product = (props) => {
+    return (
+        <div>
+            <div className="container">
+                <h5>Product Title</h5>
+                <ProductStar />
+                <ProductImageGalery />
+                <PurchaseDetails />
+                <ProductDetails />
+                <ProductQuestion />
+            </div>
+            <Footer />
         </div>
-        <Footer />
-    </div>
-)
+    )
+}
 export default Product

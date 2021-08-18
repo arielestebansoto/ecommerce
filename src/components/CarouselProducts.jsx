@@ -7,7 +7,6 @@ import '../assets/styles/components/CarouselProducts.scss'
 import CardProduct from './CardProduct';
 
 class CarouselProducts extends React.Component {
-
     carouselConfig = () => {
         const elems = document.querySelectorAll('.CarouselProducts');
         const instances = M.Carousel.init(elems, {
@@ -22,7 +21,6 @@ class CarouselProducts extends React.Component {
         this.props.getProductsLimit()
     }
     render() {
-        console.log(this.props)
         return (
         /*  
             <div className="container">
@@ -32,7 +30,7 @@ class CarouselProducts extends React.Component {
         */
             <div className="container">
                 { 
-                    this.props.productsReducer.map( card => 
+                    this.props.products.map( card => 
                         <CardProduct {...card} key={card.id}/>
                     )
                 }
@@ -41,8 +39,8 @@ class CarouselProducts extends React.Component {
     }
 }
 
-const mapStateToProps =  state  => {
-    return state
+const mapStateToProps =  ({ productsReducer })  => {
+    return productsReducer
 }
 
 export default connect(mapStateToProps, productsActions)(CarouselProducts)

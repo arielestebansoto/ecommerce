@@ -1,11 +1,16 @@
 import { GET_PRODUCTS_LIMIT } from "../actionsTypes"
 
-const INITIAL_STATE = []
+const INITIAL_STATE = {
+    products : [],
+}
 
 const productsReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case GET_PRODUCTS_LIMIT:
-            return action.payload
+            return {
+                ...state,
+                products: action.payload
+            }
         default: 
             return state
     }
