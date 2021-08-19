@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 
 import '../assets/styles/components/ProductImageGalery.scss'
 
-const ProductImageGalery = () => {
+const ProductImageGalery = (props) => {
   useEffect( () => {
     const elems = document.querySelectorAll('.ProductImageGalery');
     const instances = M.Carousel.init(elems, {
@@ -16,11 +16,11 @@ const ProductImageGalery = () => {
     return (
       <div className="row z-depth-2">
         <div className="carousel carousel-slider ProductImageGalery">
-          <a className="carousel-item " href="#one!"><img src="https://lorempixel.com/250/250/nature/1" /></a>
-          <a className="carousel-item" href="#two!"><img src="https://lorempixel.com/250/250/nature/2" /></a>
-          <a className="carousel-item" href="#three!"><img src="https://lorempixel.com/250/250/nature/3" /></a>
-          <a className="carousel-item" href="#four!"><img src="https://lorempixel.com/250/250/nature/4" /></a>
-          <a className="carousel-item" href="#five!"><img src="https://lorempixel.com/250/250/nature/5" /></a>
+          <a className="carousel-item " href="#one!"><img src={props.image} /></a>
+          <a className="carousel-item " href="#one!"><img src={props.image} /></a>
+          <a className="carousel-item " href="#one!"><img src={props.image} /></a>
+          <a className="carousel-item " href="#one!"><img src={props.image} /></a>
+          <a className="carousel-item " href="#one!"><img src={props.image} /></a>
       </div>
       </div>
   )
