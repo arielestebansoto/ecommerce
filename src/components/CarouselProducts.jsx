@@ -18,24 +18,21 @@ class CarouselProducts extends React.Component {
         } );
     }
     componentDidMount() {
-        /* this.carouselConfig() */
         this.props.getProductsLimit()
     }
+    componentDidUpdate() {
+        this.carouselConfig()
+    }
     render() {
-        console.log(this.props)
-        return (
-        /*  
+        return (  
             <div className="container">
                 <div className="carousel CarouselProducts  z-depth-2">
+                    { 
+                        this.props.productsReducer.map( card => 
+                            <CardProduct {...card} key={card.id}/>
+                        )
+                    }
                 </div> 
-            </div>
-        */
-            <div className="container">
-                { 
-                    this.props.productsReducer.map( card => 
-                        <CardProduct {...card} key={card.id}/>
-                    )
-                }
             </div>
         )
     }
