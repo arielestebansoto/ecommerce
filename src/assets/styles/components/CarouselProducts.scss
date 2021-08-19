@@ -1,3 +1,18 @@
 .CarouselProducts {
   margin-block-end: 24px;
 }
+.CarouselProducts .carousel-item {
+  height: 300px;
+}
+.CarouselProducts .card-title {
+  font-size: 16px;
+  color: black;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.CarouselProducts .card .card-image img {
+  width: auto;
+  height: 175px;
+  left: 50%;
+  transform: translateX(-50%);
+}

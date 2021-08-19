@@ -9,10 +9,8 @@ const CardProduct = (props) => {
                 <img src={ props.image } />
             </div>
             <div className="card-content">
-                <span className="card-title">{props.title}</span>
+                <p className="card-title">{props.title}</p>
                 <p>${ props.price }</p>
-                <div className="row">
-                </div>
             </div>
         </div>
     </Link>
