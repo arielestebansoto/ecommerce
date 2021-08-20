@@ -1,9 +1,13 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { addProductToCart } from '../actions/shoppingCartActions'
+
 import { Link } from 'react-router-dom'
 
 import '../assets/styles/components/PurchaseDetails.scss'
 
 const PurchaseDetails = (props) => {
+    const handleAddProductToCart = () => props.addProductToCart(props.product)
     return (
         <div className="row z-depth-2 PurchaseDetails">
             <div className="row">
@@ -14,16 +18,31 @@ const PurchaseDetails = (props) => {
             </div>
             <div className="row">
                 <Link to="shoppingcart">
-                    <button className="btn waves-effect waves-light blue darken-2 btn-large" type="submit" name="buy">Buy</button>
+                    <button 
+                        className="btn waves-effect waves-light blue darken-2 btn-large" 
+                        type="submit" 
+                        name="buy">
+                            Buy
+                </button>
                 </Link>
             </div>
             <div className="row">
-                <Link to="/shoppingcart">
-                    <button className="btn waves-effect waves-light blue disabled" type="submit" name="addCart">Add to cart</button>
-                </Link>
+                    <button 
+                        className="btn waves-effect waves-light blue lighten-4 " 
+                        type="submit" 
+                        name="addCart"
+                        onClick={ handleAddProductToCart }
+                    >
+                            Add to cart
+                    </button>
             </div>
         </div>
     )
 }
-
-export default PurchaseDetails
+const mapStateToProps = ({ productsReducer }) => {
+    return productsReducer
+}
+const mapDispatchToProps = {
+    addProductToCart,
+}
+export default connect(mapStateToProps, mapDispatchToProps)(PurchaseDetails)

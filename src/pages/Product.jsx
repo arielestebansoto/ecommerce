@@ -18,7 +18,6 @@ class Product extends React.Component {
     }
     render() {
         const { product } = this.props
-        console.log(this.props)
         if (!product) {
             return <h5>cargando...</h5>
         }
