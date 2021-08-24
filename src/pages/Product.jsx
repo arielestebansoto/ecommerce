@@ -7,7 +7,6 @@ import PurchaseDetails from '../components/PurchaseDetails'
 import ProductDetails from '../components/ProductDetails'
 import ProductQuestion from '../components/ProductQuestion'
 import Footer from '../components/Footer'
-import productsReducer from '../reducers/productsReducer'
 import { getProduct } from '../actions/productsActions'
 
 class Product extends React.Component {

@@ -1,10 +1,13 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-const CardShoppingCart = () => (
+
+const CardShoppingCart = (props) => {
+    const { purchase } = props
+    console.log(props) 
+    return (
     <div className="row z-depth-2" style={{paddingBlockStart: "16px"}}>
         <div className="col s12 m7">
             <div className="Item" style={{display: "flex", marginBlockEnd: "24px"}}>
-                <img src="https://lorempixel.com/100/190/nature/6" 
+                <img src={ purchase.image }
                     style={{
                         blockSize: "60px",
                         inlineSize: "60px",
@@ -14,14 +17,14 @@ const CardShoppingCart = () => (
                     paddingInlineStart: "24px", 
                     inlineSize: "100%"
                     }}>
-                    <h6 style={{marginBlockEnd: "16px"}}>Product Title</h6>
+                    <h6 style={{marginBlockEnd: "16px"}}>{ purchase.title }</h6>
                     <div className="CardDetails" style={{
                         display: "flex", 
                         justifyContent: "space-between", 
                         alignItems: "center"
                         }}>
 
-                        <div style={{
+                        {/* <div style={{
                             border: "1px solid rgba(0,0,0, .3)",
                             borderRadius: "5px",
                             inlineSize: "30px",
@@ -29,10 +32,9 @@ const CardShoppingCart = () => (
                             display: "flex",
                             justifyContent: "center",
                             alignItems: "center",
-                        }}>
-                            9   
-                        </div>
-                            <span>$ 9999</span>
+                        }}>  
+                        </div> */}
+                            <span><b>$ { purchase.price }</b></span>
                         </div>
                     </div>
             </div>
@@ -42,6 +44,7 @@ const CardShoppingCart = () => (
             </div>
         </div>
     </div>
-)
+    )
+}
 
 export default CardShoppingCart

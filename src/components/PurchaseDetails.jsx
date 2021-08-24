@@ -17,7 +17,7 @@ const PurchaseDetails = (props) => {
                 <span>Stock available: {props.id}</span>
             </div>
             <div className="row">
-                <Link to="shoppingcart">
+                <Link to="/shoppingcart">
                     <button 
                         className="btn waves-effect waves-light blue darken-2 btn-large" 
                         type="submit" 

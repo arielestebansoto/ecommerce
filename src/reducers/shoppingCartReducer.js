@@ -1,7 +1,11 @@
 import { ADD_PRODUCT_TO_CART } from "../actionsTypes"
 
 const INITIAL_STATE = {
-    cart: []
+    cart: [],
+    loading: false,
+    error: '',
+    paymentOption: '',
+    shippingOption: ''
 }
 
 const shoppingCartReducer = (state = INITIAL_STATE, action) => {
