@@ -1,23 +1,32 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
+import { connect } from 'react-redux'
 import PaymentMethod from '../components/PaymentMethod'
 import Sumary from '../components/Sumary'
+import { paymentCompleted } from '../actions/shoppingCartActions'
 
-const Payment = () => (
-    <div className="container">
-        <h5>Payment Options</h5>
-        <PaymentMethod />
-        <Sumary />
-        <Link to="/success">
-            <button className="btn blue darken-4">BUY</button>
-        </Link>
-        <Link to="/shippingdetails">
-            <button className="btn blue darken-2">
-                Return
-            </button>
-        </Link>
-    </div>
-)
-
-export default Payment
+const Payment = (props) => {
+    const handleClick = () => {
+        props.paymentCompleted()
+    }
+    return (
+        <div className="container">
+            <h5>Payment Options</h5>
+            <PaymentMethod />
+            <Sumary />
+                <button 
+                    className="btn blue darken-4" 
+                    onClick={handleClick}
+                >
+                    <Link to="/success">BUY</Link>
+                </button>
+                <button className="btn blue darken-2">
+                    <Link to="/shippingdetails">Return</Link>
+                </button>
+        </div>
+    )
+}
+const mapDispatchToProps = {
+    paymentCompleted
+}
+export default connect(null, mapDispatchToProps)(Payment)

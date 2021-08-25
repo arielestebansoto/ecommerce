@@ -1,27 +1,31 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
+import { addShippingOption } from '../actions/shoppingCartActions'
 
 import '../assets/styles/components/ShippingDetailsComponent.scss'
 
 const ShippingDetailsComponent = (props) => {
+    console.log(props)
     const [checkState, setChecker ] = useState({
         type: '', 
-        checked: false
     })
     
     const handleChangeValue = (e) => {
         setChecker({
             type: e.target.value,
-            checked: e.target.checked
         })
+    }
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        props.addShippingOption(checkState)
     }
     return (
         <div className="col z-depth-2 ShippingDetailsComponent">
-            <form action="#" onChange={handleChangeValue}>
+            <form action="#" onChange={handleChangeValue} onSubmit={handleSubmit}>
                 <p>
                     <label>
                         <input 
-                            name="option"
+                            name="shipping"
                             value="home" 
                             type="radio"
                         />
@@ -31,16 +35,21 @@ const ShippingDetailsComponent = (props) => {
                 <p>
                     <label>
                         <input 
-                            name="option"
+                            name="shipping"
                             value="vendor" 
                             type="radio"
                         />
                         <span>Talk with the vendor</span>
                     </label>
                 </p>
+                <button type="submit" className="btn blue ">
+                    Submit
+                </button>
             </form>
         </div>
     )
 }
-
-export default connect(null)(ShippingDetailsComponent)
+const mapDispatchToProps = {
+    addShippingOption
+}
+export default connect(null, mapDispatchToProps)(ShippingDetailsComponent)
