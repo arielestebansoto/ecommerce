@@ -1,45 +1,43 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
-const Sumary = () => (
-    <div className="row z-depth-2">
-        <div className="col s12">
-            <h4>Sumary</h4>
-            <table>
-                <tbody>
-                    <tr>
-                        <td>Product Name</td>
-                        <td>$ 999.999</td>
-                    </tr>
-                    <tr>
-                        <td>Product Name</td>
-                        <td>$ 999.999</td>
-                    </tr>
-                    <tr>
-                        <td>Product Name</td>
-                        <td>$ 999.999</td>
-                    </tr>
+import { finalPrice }from '../utils/sumaryUtils'
 
-                </tbody>
-            </table>
-            <div className="divider"></div>
-            <table className="Final">
-                <tbody>
-                    <tr>
-                        <td>Subtotal</td>
-                        <td>$ 999.999</td>
-                    </tr>
-                    <tr>
-                        <td>Shipping</td>
-                        <td>$ 999.999</td>
-                    </tr>
-                    <tr>
-                        <td>Total</td>
-                        <td>$ 999.999</td>
-                    </tr>
-                </tbody>
-            </table>
+const Sumary = (props) => {
+    console.log(props)
+    const getCart = () => (
+        props.cart.map( (purchase, key) => { 
+            return (
+                <tr key={key}>
+                    <td>{purchase.title}</td>
+                    <td><b>$ {purchase.price}</b></td>
+                </tr>
+            ) } )
+        )
+    
+    return (
+        <div className="row z-depth-2">
+            <div className="col s12">
+                <h4>Sumary</h4>
+                <table>
+                    <tbody>
+                       { getCart() }
+                    </tbody>
+                </table>
+                <div className="divider"></div>
+                <table className="Final">
+                    <tbody>
+                        <tr>
+                            <td>Total</td>
+                            <td><b>$ { finalPrice(props.cart)}</b></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-    </div>
-)
-
-export default Sumary
+    )
+}
+    const mapStateToProps = ({ shoppingCartReducer}) => {
+    return shoppingCartReducer
+}
+export default connect(mapStateToProps)(Sumary)
