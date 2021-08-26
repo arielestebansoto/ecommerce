@@ -7,14 +7,29 @@ import { Link } from 'react-router-dom'
 import '../assets/styles/components/PurchaseDetails.scss'
 
 const PurchaseDetails = (props) => {
-    const handleAddProductToCart = () => props.addProductToCart(props.product)
+    const { shoppingCartReducer, productsReducer } = props
+    const { product, product: { id, price } } = productsReducer
+    const { cart } = shoppingCartReducer
+    
+    const handleAddProductToCart = () => {
+        if (!cart.length) {
+            props.addProductToCart(product)
+        } 
+        cart.forEach( (element, index) => {
+            if (!(cart[index].id === product.id)) {
+                props.addProductToCart(product)
+            } else {
+                return alert('this product has been added')
+            }
+        })
+    }
     return (
         <div className="row z-depth-2 PurchaseDetails">
             <div className="row">
-                <span>$ {props.price}</span>
+                <span>$ {price}</span>
             </div>
             <div className="row">
-                <span>Stock available: {props.id}</span>
+                <span>Stock available: {id}</span>
             </div>
             <div className="row">
                 <Link to="/shoppingcart">
@@ -39,8 +54,8 @@ const PurchaseDetails = (props) => {
         </div>
     )
 }
-const mapStateToProps = ({ productsReducer }) => {
-    return productsReducer
+const mapStateToProps = ({ productsReducer, shoppingCartReducer }) => {
+    return { productsReducer, shoppingCartReducer }
 }
 const mapDispatchToProps = {
     addProductToCart,
