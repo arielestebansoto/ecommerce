@@ -19,7 +19,7 @@ const Header = () =>
                         <SearchBar />
                     </div>
                     <div className="col s2">
-                        <Link to="/cart">
+                        <Link to="/shoppingcart">
                             <i className="material-icons">shopping_cart</i>
                         </Link>
                     </div>

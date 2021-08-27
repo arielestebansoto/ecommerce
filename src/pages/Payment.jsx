@@ -1,24 +1,30 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import PaymentMethod from '../components/PaymentMethod'
-import Sumary from '../components/Sumary'
+
 import { paymentCompleted } from '../actions/shoppingCartActions'
+import Sumary from '../components/Sumary'
 
 const Payment = (props) => {
+    console.log(props)
+    const { cart, paymentOption, shippingOption } = props
     const handleClick = () => {
-        props.paymentCompleted()
+        if (!cart.length || !paymentOption || !shippingOption) {
+            alert('Go back and but some stuff')
+            props.history.push('/')
+        }
+        props.paymentCompleted();
+        // props.history.push('/')
     }
     return (
         <div className="container">
             <h5>Payment Options</h5>
-            <PaymentMethod />
             <Sumary />
                 <button 
                     className="btn blue darken-4" 
                     onClick={handleClick}
                 >
-                    <Link to="/success">BUY</Link>
+                    BUY
                 </button>
                 <button className="btn blue darken-2">
                     <Link to="/shippingdetails">Return</Link>
@@ -26,7 +32,10 @@ const Payment = (props) => {
         </div>
     )
 }
+const mapStateToProps = ({ shoppingCartReducer }) => {
+    return shoppingCartReducer
+}
 const mapDispatchToProps = {
     paymentCompleted
 }
-export default connect(null, mapDispatchToProps)(Payment)
+export default connect(mapStateToProps, mapDispatchToProps)(Payment)

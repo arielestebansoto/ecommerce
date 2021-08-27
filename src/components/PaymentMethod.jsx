@@ -1,28 +1,36 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
+import { withRouter } from 'react-router'
+
 import { addPaymentOption } from '../actions/shoppingCartActions'
 
 import '../assets/styles/components/PaymentMethod.scss'
 
 const PaymentMethod = (props) => {
+    console.log(props)
     const [payment, setPayment] = useState({
         type: ''
     })
 
-    const onValueChange = (e) => {
+    const handleChangeValue = (e) => {
         setPayment({
             type: e.target.value
         })
     }
-
     const handleSubmit = (e) => {
-        e.preventDefault()
-        props.addPaymentOption(payment)
+        if (!payment.type) {
+            alert('Select an option to continue')
+        }
+        if (payment.type) {
+            e.preventDefault()
+            props.addPaymentOption(payment)
+            props.history.push('/payment')
+        }
     }
     return (
         <div className="row">
             <div className="col s12 z-depth-2 PaymentMethod">
-                <form action="#" onSubmit={handleSubmit} onChange={onValueChange}>
+                <form action="#" onChange={handleChangeValue} onSubmit={handleSubmit}>
                     <p>
                         <label>
                             <input 
@@ -44,8 +52,8 @@ const PaymentMethod = (props) => {
                             <span>Cash</span>
                         </label>
                     </p>
-                    <button type="submit" className="btn blue">
-                        submit
+                    <button type="submit" className="btn blue ">
+                        Continue
                     </button>
                 </form>
             </div>
@@ -55,4 +63,4 @@ const PaymentMethod = (props) => {
 const mapDispatchToProps = {
     addPaymentOption
 }
-export default connect(null, mapDispatchToProps)(PaymentMethod)
+export default withRouter(connect(null, mapDispatchToProps)(PaymentMethod))

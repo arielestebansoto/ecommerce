@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
+import { withRouter } from 'react-router'
 import { addShippingOption } from '../actions/shoppingCartActions'
 
 import '../assets/styles/components/ShippingDetailsComponent.scss'
@@ -16,8 +17,14 @@ const ShippingDetailsComponent = (props) => {
         })
     }
     const handleSubmit = (e) => {
-        e.preventDefault()
-        props.addShippingOption(checkState)
+        if (!checkState.type) {
+            alert('Select an option to continue')
+        }
+        if (checkState.type) {
+            e.preventDefault()
+            props.addShippingOption(checkState)
+            props.history.push('/paymentoption')
+        }
     }
     return (
         <div className="col z-depth-2 ShippingDetailsComponent">
@@ -43,7 +50,7 @@ const ShippingDetailsComponent = (props) => {
                     </label>
                 </p>
                 <button type="submit" className="btn blue ">
-                    Submit
+                    Continue
                 </button>
             </form>
         </div>
@@ -52,4 +59,4 @@ const ShippingDetailsComponent = (props) => {
 const mapDispatchToProps = {
     addShippingOption
 }
-export default connect(null, mapDispatchToProps)(ShippingDetailsComponent)
+export default withRouter(connect(null, mapDispatchToProps)(ShippingDetailsComponent))
