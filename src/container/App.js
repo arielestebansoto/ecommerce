@@ -1,6 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
+import '../assets/styles/global.scss'
 
 import '../assets/styles/global.scss'
 import 'materialize-css/dist/css/materialize.css'

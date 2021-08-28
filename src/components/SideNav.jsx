@@ -18,7 +18,7 @@ const SideNav = props => {
         props.logOutRequest()
     }
     return (
-        <ul id="slide-out" className="SideNav sidenav"> 
+        <ul id="slide-out" className="SideNav sidenav "> 
             <li>
                 <div className="user-view">
                     <div className="background blue lighten-4"> </div>

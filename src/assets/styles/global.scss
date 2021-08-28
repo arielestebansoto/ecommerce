@@ -1,0 +1,36 @@
+#app {
+    position: absolute;
+    top: 0;
+    left: 50%;
+
+    
+    height: 640px;
+    width: 360px;
+    
+    overflow-y: scroll;
+    border-radius: 50px;
+    transform: translateX(-50%);
+
+    box-shadow: 0px 0px 0px 3px rgba(0,0,0,0.75);
+-webkit-box-shadow: 0px 0px 0px 3px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 0px 3px rgba(0,0,0,0.75);
+}
+
+#app::-webkit-scrollbar{
+    position: absolute;
+    left: 0;
+    width: 5px;
+    height: 3px;
+    }
+    ::-webkit-scrollbar-thumb{
+    background: #B3AFB3;
+    border-radius: 0px;
+    }
+    ::-webkit-scrollbar-thumb:hover{
+    background: #B3AFB3;
+    }
+    ::-webkit-scrollbar-track{
+    background: rgba(0,0,0,0);
+    border-radius: 0px;
+    box-shadow: inset 0px 0px 0px 0px #F0F0F0;
+    }
