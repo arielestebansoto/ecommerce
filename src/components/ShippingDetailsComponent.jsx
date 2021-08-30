@@ -28,6 +28,7 @@ const ShippingDetailsComponent = (props) => {
     }
     return (
         <div className="col z-depth-2 ShippingDetailsComponent">
+            <h6>Shipping Method</h6>
             <form action="#" onChange={handleChangeValue} onSubmit={handleSubmit}>
                 <p>
                     <label>

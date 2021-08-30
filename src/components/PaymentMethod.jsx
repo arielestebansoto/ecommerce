@@ -29,6 +29,7 @@ const PaymentMethod = (props) => {
     }
     return (
         <div className="col s12 z-depth-2 PaymentMethod">
+            <h6>Payment Method</h6>
             <form action="#" onChange={handleChangeValue} onSubmit={handleSubmit}>
                 <p>
                     <label>

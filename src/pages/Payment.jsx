@@ -4,17 +4,20 @@ import { connect } from 'react-redux'
 
 import { paymentCompleted } from '../actions/shoppingCartActions'
 import Sumary from '../components/Sumary'
+import Successful from '../components/global/Successful'
 
 const Payment = (props) => {
     console.log(props)
     const { cart, paymentOption, shippingOption } = props
     const handleClick = () => {
         if (!cart.length || !paymentOption || !shippingOption) {
-            alert('Go back and but some stuff')
+            alert('Go back and buy some stuff')
             props.history.push('/')
         }
         props.paymentCompleted();
-        // props.history.push('/')
+    }
+    if (props.purchaseCompleted) {
+        return <Successful />
     }
     return (
         <div className="container">

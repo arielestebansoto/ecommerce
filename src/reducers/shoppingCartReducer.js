@@ -11,7 +11,7 @@ const INITIAL_STATE = {
     error: '',
     paymentOption: '',
     shippingOption: '',
-    completed: false,
+    purchaseCompleted: false,
 }
 
 const shoppingCartReducer = (state = INITIAL_STATE, action) => {
@@ -37,7 +37,7 @@ const shoppingCartReducer = (state = INITIAL_STATE, action) => {
         case PAYMENT_COMPLETED:
             return {
                 ...state,
-                completed: action.payload
+                purchaseCompleted: action.payload
             }
         default: return state
     }

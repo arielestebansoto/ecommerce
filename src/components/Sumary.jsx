@@ -14,11 +14,15 @@ const Sumary = (props) => {
                 </tr>
             ) } )
         )
-    
+
     return (
         <div className="row z-depth-2">
             <div className="col s12">
                 <h4>Sumary</h4>
+                <div className="col s12">
+                    <p>Payment Method: {props.paymentOption}</p>
+                    <p>Shipping to: {props.shippingOption}</p>
+                </div>
                 <table>
                     <tbody>
                        { getCart() }
