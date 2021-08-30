@@ -12,17 +12,21 @@ import Loader from '../components/global/Loader'
 import { getProduct } from '../actions/productsActions'
 
 class Product extends React.Component {
+    constructor(props){
+        super(props)
+    }
     componentDidMount() {
-        if (!this.props.product.length) {
-            this.props.getProduct(this.props.match.params.id)
-        }
+        const { productList, match: { params: { id: product_id } } }  = this.props
+        this.props.getProduct(product_id, productList)
     }
     render() {
         const { loading, product } = this.props
         if (loading) {
+            console.log(this.props)
             return <Loader />
         }
         if (product) {
+            console.log(this.props)
             return (
                 <div>
                     <div className="container">
