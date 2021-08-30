@@ -43,7 +43,7 @@ const PurchaseDetails = (props) => {
             </div>
             <div className="row">
                     <button 
-                        className="btn waves-effect waves-light blue lighten-4 " 
+                        className="btn waves-effect waves-light blue lighten-1 " 
                         type="submit" 
                         name="addCart"
                         onClick={ handleAddProductToCart }

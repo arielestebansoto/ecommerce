@@ -7,18 +7,20 @@ import PurchaseDetails from '../components/PurchaseDetails'
 import ProductDetails from '../components/ProductDetails'
 import ProductQuestion from '../components/ProductQuestion'
 import Footer from '../components/Footer'
+import Loader from '../components/global/Loader'
+
 import { getProduct } from '../actions/productsActions'
 
 class Product extends React.Component {
-    async componentDidMount() {
+    componentDidMount() {
         if (!this.props.product.length) {
-            await this.props.getProduct(this.props.match.params.id)
+            this.props.getProduct(this.props.match.params.id)
         }
     }
     render() {
-        const { product } = this.props
-        if (!product) {
-            return <h5>cargando...</h5>
+        const { loading, product } = this.props
+        if (loading) {
+            return <Loader />
         }
         if (product) {
             return (
