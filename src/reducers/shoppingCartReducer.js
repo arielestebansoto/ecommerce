@@ -43,7 +43,8 @@ const shoppingCartReducer = (state = INITIAL_STATE, action) => {
         case PAYMENT_COMPLETED:
             return {
                 ...state,
-                purchaseCompleted: action.payload
+                purchaseCompleted: action.payload,
+                cart: INITIAL_STATE.cart
             }
         default: return state
     }

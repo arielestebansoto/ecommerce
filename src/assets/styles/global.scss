@@ -1,36 +1,30 @@
-/* #app {
-    position: absolute;
-    top: 0;
-    left: 50%;
-
-    
-    height: 640px;
+#app {
+    margin: 0 auto;
     width: 360px;
-    
-    overflow-y: scroll;
+    height: 640px;
+
     border-radius: 50px;
-    transform: translateX(-50%);
-
     box-shadow: 0px 0px 0px 3px rgba(0,0,0,0.75);
--webkit-box-shadow: 0px 0px 0px 3px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 0px 0px 3px rgba(0,0,0,0.75);
-}
+    -webkit-box-shadow: 0px 0px 0px 3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 0px 3px rgba(0,0,0,0.75);
 
-#app::-webkit-scrollbar{
-    position: absolute;
-    left: 0;
+    overflow-y: hidden;
+}
+#app:hover {
+    overflow-y: scroll; 
+}
+#app::-webkit-scrollbar {
     width: 5px;
-    height: 3px;
-    }
-    ::-webkit-scrollbar-thumb{
-    background: #B3AFB3;
-    border-radius: 0px;
-    }
-    ::-webkit-scrollbar-thumb:hover{
-    background: #B3AFB3;
-    }
-    ::-webkit-scrollbar-track{
-    background: rgba(0,0,0,0);
-    border-radius: 0px;
-    box-shadow: inset 0px 0px 0px 0px #F0F0F0;
-    } */
+}
+#app::-webkit-scrollbar-track {
+    width:5px;
+    background: rgba(0,0,0,.05);
+}
+#app::-webkit-scrollbar-thumb {
+    background-color: #ababab;
+    border-radius: 15px;
+    border: 0px dashed #000000;
+}
+#app::-webkit-scrollbar-thumb:hover {
+    background-color: #808080;
+}                   

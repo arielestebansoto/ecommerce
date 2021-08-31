@@ -3,13 +3,14 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 import CardShoppingCart from '../components/CardShoppingCart'
+import NoProduct from '../components/global/NoProduct'
 
 const ShoppingCart = (props) => {
     
     console.log(props)
 
     if (props.cart.length === 0) { 
-         return <h4>no hay productos</h4>
+         return <NoProduct />
     } 
     const renderPurchase = () => (
         props.cart.map( (product, key) => 
