@@ -2,7 +2,8 @@ import {
     ADD_PRODUCT_TO_CART, 
     ADD_SHIPPING_OPTION,
     ADD_PAYMENT_OPTION,
-    PAYMENT_COMPLETED
+    PAYMENT_COMPLETED,
+    REMOVE_PRODUCT_FROM_CART
 } from "../actionsTypes"
 
 export const addProductToCart = (product) => (dispatch) => {
@@ -27,5 +28,17 @@ export const paymentCompleted = () => (dispatch) => {
     dispatch({
         type: PAYMENT_COMPLETED,
         payload: true,
+    })
+}
+export const removeProductFromCart = (product, cart) => (dispatch) => {
+    const new_cart = []
+    cart.forEach( element => {
+        if(!(element.id === product.id)) {
+            new_cart.push(element)
+        } 
+    })
+    dispatch({
+        type: REMOVE_PRODUCT_FROM_CART,
+        payload: new_cart
     })
 }

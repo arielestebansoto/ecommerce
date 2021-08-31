@@ -2,7 +2,8 @@ import {
     ADD_PAYMENT_OPTION, 
     ADD_PRODUCT_TO_CART, 
     ADD_SHIPPING_OPTION, 
-    PAYMENT_COMPLETED 
+    PAYMENT_COMPLETED, 
+    REMOVE_PRODUCT_FROM_CART
 } from "../actionsTypes"
 
 const INITIAL_STATE = {
@@ -23,6 +24,11 @@ const shoppingCartReducer = (state = INITIAL_STATE, action) => {
                     ...state.cart,
                     action.payload
                 ]
+            }
+        case REMOVE_PRODUCT_FROM_CART:
+            return {
+                ...state,
+                cart: action.payload
             }
         case ADD_SHIPPING_OPTION:
             return {

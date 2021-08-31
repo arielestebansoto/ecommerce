@@ -12,9 +12,9 @@ const ShoppingCart = (props) => {
          return <h4>no hay productos</h4>
     } 
     const renderPurchase = () => (
-        props.cart.map( (purchase, key) => 
+        props.cart.map( (product, key) => 
             <li key={key}>
-                <CardShoppingCart purchase={purchase} />
+                <CardShoppingCart product={product} />
             </li>
         )
     )
@@ -36,4 +36,5 @@ const ShoppingCart = (props) => {
 const mapStateToProps = ( {shoppingCartReducer} ) => {
     return shoppingCartReducer
 }
-export default connect(mapStateToProps, null)(ShoppingCart)
+
+export default connect(mapStateToProps)(ShoppingCart)

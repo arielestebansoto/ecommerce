@@ -1,13 +1,15 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { removeProductFromCart } from '../actions/shoppingCartActions'
 
 const CardShoppingCart = (props) => {
-    const { purchase } = props
-    console.log(props) 
+    const { product, cart } = props
+    const handleClick = () => props.removeProductFromCart(product, cart) 
     return (
     <div className="row z-depth-2" style={{paddingBlockStart: "16px"}}>
         <div className="col s12 m7">
             <div className="Item" style={{display: "flex", marginBlockEnd: "24px"}}>
-                <img src={ purchase.image }
+                <img src={ product.image }
                     style={{
                         blockSize: "60px",
                         inlineSize: "60px",
@@ -17,7 +19,7 @@ const CardShoppingCart = (props) => {
                     paddingInlineStart: "24px", 
                     inlineSize: "100%"
                     }}>
-                    <h6 style={{marginBlockEnd: "16px"}}>{ purchase.title }</h6>
+                    <h6 style={{marginBlockEnd: "16px"}}>{ product.title }</h6>
                     <div className="CardDetails" style={{
                         display: "flex", 
                         justifyContent: "space-between", 
@@ -34,17 +36,27 @@ const CardShoppingCart = (props) => {
                             alignItems: "center",
                         }}>  
                         </div> */}
-                            <span><b>$ { purchase.price }</b></span>
+                            <span><b>$ { product.price }</b></span>
                         </div>
                     </div>
             </div>
             <div className="divider"></div>
             <div className="ItemAcions"style={{padding: "8px"}}>
-                <button className="btn-flat blue-text darken-4">eliminar</button>
+                <button 
+                    className="btn-flat blue-text darken-4"
+                    onClick={handleClick}
+                >
+                    eliminar
+                </button>
             </div>
         </div>
     </div>
     )
 }
-
-export default CardShoppingCart
+const mapStateToProps = ({shoppingCartReducer}) => {
+    return { cart: shoppingCartReducer.cart }
+}
+const mapDispatchToProps = {
+    removeProductFromCart
+}
+export default connect(mapStateToProps, mapDispatchToProps)(CardShoppingCart)
