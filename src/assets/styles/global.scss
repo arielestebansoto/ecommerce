@@ -18,7 +18,7 @@
 }
 #app::-webkit-scrollbar-track {
     width:5px;
-    background: rgba(0,0,0,.05);
+    background: rgba(0,0,0,.05); 
 }
 #app::-webkit-scrollbar-thumb {
     background-color: #ababab;
@@ -28,3 +28,24 @@
 #app::-webkit-scrollbar-thumb:hover {
     background-color: #808080;
 }                   
+label span::after {
+    background-color: red!important;
+    border-color: red!important;
+}
+
+
+input:focus,
+.input-field input[type=text]:focus {
+    border-bottom-color: red!important;
+    box-shadow:0 1px 0 0 red!important;
+}
+.input-field input:focus + label.active,
+.input-field input[type=text]:focus + label.active
+// textarea.materialize-textarea:focus:not([readonly]) + label 
+{
+    color: red !important
+}
+[type=checkbox]:checked + span:not(.lever):before {
+    border-right: 2px solid red!important;
+    border-bottom: 2px solid red!important;
+}

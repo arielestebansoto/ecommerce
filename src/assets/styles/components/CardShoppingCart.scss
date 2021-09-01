@@ -1,0 +1,35 @@
+.CardShoppingCart {
+    padding-block-start: 16px;
+}
+.CardShoppingCart_item {
+    display: flex;
+    margin-block-end: 24px;
+}
+.CardShoppingCart_item img {
+    block-size: 60px;
+    inline-size: 60px;
+}
+.CardShoppingCart_item .CardContent {
+    padding-inline-start: 24px; 
+    inline-size: 100%;
+}
+.CardShoppingCart_item .CardContent h6 {
+    margin-block-end: 16px;
+}
+.CardShoppingCart_item .CardContent .CardDetails {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+}
+.CardShoppingCart .ItemAcions {
+    padding: 8px;
+}
+// {
+//     border: "1px solid rgba(0,0,0, .3)",
+//     borderRadius: "5px",
+//     inlineSize: "30px",
+//     blockSize: "30px",
+//     display: "flex",
+//     justifyContent: "center",
+//     alignItems: "center",
+// }
