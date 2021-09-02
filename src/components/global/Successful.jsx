@@ -1,6 +1,8 @@
 import React from 'react'
 import { withRouter} from 'react-router-dom'
 
+import '../../assets/styles/components/Success.scss'
+
 class Successful extends React.Component {
     constructor() {
         super()
@@ -9,7 +11,7 @@ class Successful extends React.Component {
     render() {
         return (
             <div className="center">
-                <i className="material-icons green-text large">check</i>
+                <i className="material-icons red-text large">check</i>
                 <h6>Your purchase has been successful</h6>
             </div>
         )

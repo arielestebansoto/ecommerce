@@ -1,12 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+
 import  SearchBar  from './SearchBar'
 import SendTo from './SendTo'
 import SideNav from './SideNav'
 
 import '../assets/styles/components/Header.scss'
 
-const Header = () => 
+const Header = (props) => 
 (
     <div>
             <nav>
@@ -19,7 +21,12 @@ const Header = () =>
                     </div>
                     <div className="col s2">
                         <Link to="/shoppingcart">
-                            <i className="material-icons">shopping_cart</i>
+                            {
+                                props.cart.length > 0 ?
+                                <i className="material-icons red-text">add_shopping_cart</i>
+                                : <i className="material-icons">shopping_cart</i>
+                                
+                            }
                         </Link>
                     </div>
                 </div>
@@ -30,5 +37,7 @@ const Header = () =>
         
     </div>
     )
-
-export default Header
+const mapStateToProps = ({shoppingCartReducer}) => {
+    return shoppingCartReducer
+}
+export default connect(mapStateToProps)(Header)

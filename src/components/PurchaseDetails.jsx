@@ -5,6 +5,7 @@ import { addProductToCart } from '../actions/shoppingCartActions'
 import { Link } from 'react-router-dom'
 
 import '../assets/styles/components/PurchaseDetails.scss'
+import toast from './Toast'
 
 const PurchaseDetails = (props) => {
     const { shoppingCartReducer, productsReducer } = props
@@ -14,10 +15,12 @@ const PurchaseDetails = (props) => {
     const handleAddProductToCart = () => {
         if (!cart.length) {
             props.addProductToCart(product)
+            toast('product added!')
         } 
         cart.forEach( (element, index) => {
             if (!(cart[index].id === product.id)) {
                 props.addProductToCart(product)
+                toast('product added!')
             } else {
                 return alert('this product has been added')
             }
