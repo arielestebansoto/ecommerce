@@ -9,10 +9,22 @@ const INITIAL_STATE = {
 
 const productsReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
+        case ERROR:
+            return {
+                ...state,
+                error: true,
+                loading: false
+            }
+        case LOADING:
+            return {
+                ...state,
+                loading: true
+            }
         case GET_PRODUCTS_LIMIT:
             return {
                 ...state,
-                productList: action.payload
+                productList: action.payload,
+                loading: false
             }
         case GET_PRODUCT:
             return {
@@ -20,16 +32,6 @@ const productsReducer = (state = INITIAL_STATE, action) => {
                 loading: false,
                 product: {...action.payload}
             }
-            case ERROR:
-                return {
-                    ...state,
-                    error: true
-                }
-            case LOADING:
-                return {
-                    ...state,
-                    loading: true
-                }
             default: 
             return state
         }
