@@ -1,3 +1,18 @@
+.ProductImageGalery {
+  height: 300px;
+}
+.ProductImageGalery .carousel-item {
+  width: auto;
+  height: 100%;
+  min-height: 100px !important;
+}
+.ProductImageGalery .carousel-item img {
+  width: auto;
+  height: 100%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
 .ProductImageGalery .indicator-item {
   box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.5);
 }

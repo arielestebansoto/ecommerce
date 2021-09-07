@@ -4,9 +4,9 @@ import { connect } from 'react-redux'
 import PaymentMethod from '../components/PaymentMethod'
 
 const PaymentOption = (props) => {
-    console.log(props)
     return (
         <div className="container">
+            <button className="btn-flat blue-text" onClick={ () => props.history.goBack() }>Return</button>
             <PaymentMethod />
         </div>
     )

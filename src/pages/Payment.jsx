@@ -21,17 +21,10 @@ const Payment = (props) => {
     }
     return (
         <div className="container">
+                <button className="btn-flat blue-text" onClick={ () => props.history.goBack() }>Return</button>
             <h5>Payment Options</h5>
             <Sumary />
-                <button 
-                    className="btn blue darken-4" 
-                    onClick={handleClick}
-                >
-                    BUY
-                </button>
-                <button className="btn blue darken-2">
-                    <Link to="/shippingdetails">Return</Link>
-                </button>
+            <button className="btn blue darken-2" onClick={handleClick}>BUY</button>
         </div>
     )
 }
