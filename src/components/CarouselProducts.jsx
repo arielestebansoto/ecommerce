@@ -1,11 +1,8 @@
 import React from 'react'
-import { connect } from 'react-redux';
-import * as productsActions  from '../actions/productsActions'
 
 import '../assets/styles/components/CarouselProducts.scss'
 
 import CardProduct from './CardProduct';
-import Loader from './global/Loader'
 
 class CarouselProducts extends React.Component {
     carouselConfig = () => {
@@ -19,23 +16,15 @@ class CarouselProducts extends React.Component {
         const carouselInstance = M.Carousel.getInstance(element)
         element.removeEventListener('click', carouselInstance._handleCarouselClickBound)
     }
-    componentDidMount() {
-        this.props.getProductsLimit()
-    }
-    componentDidUpdate() {
-        if(this.props.loading === false) {
-            this.carouselConfig()
-        }
+    componentDidMount(){
+        this.carouselConfig()
     }
     renderProductList = () => {
-        return this.props.productList.map( card => 
-            <CardProduct {...card} key={card.id}/>
+        return this.props.products.map( 
+            card => <CardProduct {...card} key={card.id}/>
             )
-         }
-    render() {
-        if (this.props.loading) {
-            return <Loader />
         }
+        render() {
         return (
             <div className="container">
                 <div className="carousel CarouselProducts  z-depth-2">
@@ -46,8 +35,5 @@ class CarouselProducts extends React.Component {
     }
 }
 
-const mapStateToProps =  ({ productsReducer })  => {
-    return productsReducer
-}
 
-export default connect(mapStateToProps, productsActions)(CarouselProducts)
+export default CarouselProducts

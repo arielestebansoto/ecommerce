@@ -1,25 +1,36 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+
+import * as productsActions from '../actions/productsActions'
 
 import CarouselHome from '../components/CarouselHome'
 import CarouselProducts from '../components/CarouselProducts'
-import CardProduct from '../components/CardProduct'
 import Footer from '../components/Footer'
+import Loader from '../components/global/Loader'
 
-const Home = () => 
-    (
-    <div>
-        <CarouselHome />
-        <CarouselProducts>
-            <CardProduct />
-            <CardProduct />
-            <CardProduct />
-            <CardProduct />
-            <CardProduct />
-        </CarouselProducts>
-        <Footer />
-    </div>    
-)
+class Home extends React.Component {
 
+    componentDidMount() {
+        if(!this.props.productsReducer.productList.length) {
+            this.props.getProductsLimit()
+        }
+    }
+    render() {
+        if (this.props.productsReducer.productList.length === 0) {
+            return <Loader />
+        }
+        return (
+            <div>
+                <CarouselHome />
+                <CarouselProducts products={this.props.productsReducer.productList}/>
+                <Footer />
+            </div>    
+        )
+    }
+} 
 
-export default Home
+const mapStateToProps = (state) => {
+    return state
+}
+export default connect(mapStateToProps, productsActions)(Home)
