@@ -16,7 +16,7 @@ import ShoppingCart from '../pages/ShoppingCart'
 import ShippingDetails from '../pages/ShippingDetails'
 import Register from '../pages/Register'
 import Account from '../pages/Account'
-
+import NotFound from '../pages/NotFound'
 import Header from '../components/Header'
 
 const App = () => {
@@ -33,6 +33,7 @@ const App = () => {
             <Route exact path="/payment" component={Payment}/> 
             <Route exact path="/register" component={Register}/> 
             <Route exact path="/account" component={Account} />
+            <Route component={NotFound} />
         </Switch>
     </BrowserRouter>
  )
