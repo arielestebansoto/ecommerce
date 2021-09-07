@@ -5,7 +5,7 @@ import { addProductToCart } from '../actions/shoppingCartActions'
 import { Link } from 'react-router-dom'
 
 import '../assets/styles/components/PurchaseDetails.scss'
-import toast from './Toast'
+import { toast } from '../utils/toast'
 
 const PurchaseDetails = (props) => {
     const { shoppingCartReducer, productsReducer } = props

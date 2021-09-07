@@ -1,2 +1,1 @@
-const Toast = message => M.toast({html: message})
-export default Toast 
+export const toast = message => M.toast({html: message})
