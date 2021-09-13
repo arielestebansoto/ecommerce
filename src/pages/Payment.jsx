@@ -1,22 +1,26 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 import { paymentCompleted } from '../actions/shoppingCartActions'
 import Sumary from '../components/Sumary'
 import Successful from '../components/global/Successful'
 
+import { toast } from '../utils/toast'
+
 const Payment = (props) => {
     console.log(props)
-    const { cart, paymentOption, shippingOption } = props
+    const { cart, paymentOption, shippingOption, purchaseCompleted } = props.shoppingCartReducer
     const handleClick = () => {
-        if (!cart.length || !paymentOption || !shippingOption) {
-            alert('Go back and buy some stuff')
+        if (!props.userReducer.isLogin) {
+            toast('Please login before the payment')
+        } else if (!cart.length || !paymentOption || !shippingOption) {
+            toast('Go back and buy some stuff')
             props.history.push('/')
+        } else {
+            props.paymentCompleted();
         }
-        props.paymentCompleted();
     }
-    if (props.purchaseCompleted) {
+    if (purchaseCompleted) {
         return <Successful />
     }
     return (
@@ -28,8 +32,8 @@ const Payment = (props) => {
         </div>
     )
 }
-const mapStateToProps = ({ shoppingCartReducer }) => {
-    return shoppingCartReducer
+const mapStateToProps = ({ shoppingCartReducer, userReducer }) => {
+    return { shoppingCartReducer, userReducer }
 }
 const mapDispatchToProps = {
     paymentCompleted
