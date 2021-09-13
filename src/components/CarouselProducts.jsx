@@ -27,9 +27,11 @@ class CarouselProducts extends React.Component {
         render() {
         return (
             <div className="container">
-                <div className="carousel CarouselProducts  z-depth-2">
-                    { this.renderProductList() }
-                </div>  
+                <div className="row">
+                    <div className="carousel CarouselProducts  z-depth-2">
+                        { this.renderProductList() }
+                    </div>  
+                </div>
             </div>
         )
     }

@@ -21,7 +21,7 @@ class Home extends React.Component {
             return <Loader />
         }
         return (
-            <div>
+            <div className="container">
                 <CarouselHome />
                 <CarouselProducts products={this.props.productsReducer.productList}/>
                 <Footer />

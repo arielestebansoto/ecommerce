@@ -1,11 +1,21 @@
 .CarouselHome {
-    height: 250px;
+    height: 340px !important;
+//     @media screen and (min-width: 600px) {
+//         height: 230px !important;
+//     }
+//     @media screen and (min-width: 992px) {
+//         max-height: 300px !important;
+//     }
 }
-.CarouselHome .carousel-item {
-    min-height: 200px;
-}
-.Carousel-item img {
-    border-radius: 50px;
-    padding: 20px;
-    min-height: 200px;
-}
+// .CarouselHome .carousel-item {
+//     min-height: 200px;
+//     @media screen and (min-width: 600px) {
+//         min-height: inherit;
+//     }
+// }
+// .Carousel-item img {
+//     height: 100%;
+//     border-radius: 50px;
+//     padding: 20px;
+//     min-height: 200px;
+// }
