@@ -1,14 +1,21 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+
+import Header from '../components/Header'
+
 import ShippingDetailsComponent from '../components/ShippingDetailsComponent'
 
 const ShippingDetails = (props) => {
-    console.log(props)
     return (
-        <div className="container">
-                <button className="btn-flat blue-text" onClick={ () => props.history.goBack() }>Return</button>
+        <>
+            <Header />
+            <div className="container">
+                <button 
+                    className="btn-flat blue-text" 
+                    onClick={ () => props.history.goBack() }
+                >Return </button>
                 <ShippingDetailsComponent />
-        </div>
+            </div>
+    </>
     )
 }
 export default ShippingDetails

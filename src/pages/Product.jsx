@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+import Header from '../components/Header'
 import ProductStar from '../components/ProductStar'
 import ProductImageGalery from '../components/ProductImageGalery'
 import PurchaseDetails from '../components/PurchaseDetails'
@@ -12,23 +13,18 @@ import Loader from '../components/global/Loader'
 import { getProduct } from '../actions/productsActions'
 
 class Product extends React.Component {
-    constructor(props){
-        super(props)
-    }
     componentDidMount() {
         const { productList, match: { params: { id: product_id } } }  = this.props
         this.props.getProduct(product_id, productList)
     }
     render() {
         const { loading, product } = this.props
-        if (loading) {
-            console.log(this.props)
-            return <Loader />
-        }
-        if (product) {
-            console.log(this.props)
-            return (
-                <div>
+        return (
+        <>
+            <Header />
+            { 
+            loading ? <Loader /> : product ? 
+                <>
                     <div className="container">
                         <h5>{product.title}</h5>
                         <ProductStar />
@@ -38,9 +34,11 @@ class Product extends React.Component {
                         <ProductQuestion />
                     </div>
                     <Footer />
-                </div>
-            )
+                </>    
+            : null 
         }
+        </>
+        )
     }
 } 
 

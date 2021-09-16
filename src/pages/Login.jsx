@@ -1,15 +1,14 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+
+import '../assets/styles/pages/Login.scss'
+
 import FormLogin from '../components/FormLogin'
+import HeaderParcial from '../components/HeaderParcial'
 
 const Login = () => (
-    <div className="container">
-       <FormLogin />
-       <div className="row center">
-            <Link to="/register" >
-                <button className="btn-flat blue-text">Don't have acount? Register</button>
-            </Link>
-       </div>
+    <div className="Login"> 
+        <HeaderParcial />
+        <FormLogin />
     </div>
 )
 export default Login

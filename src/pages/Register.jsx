@@ -1,11 +1,12 @@
 import React from 'react'
+
+import '../assets/styles/pages/Login.scss'
 import FormRegister from '../components/FormRegister'
+import HeaderParcial from '../components/HeaderParcial'
 
 const Register = () => (
-    <div className="container">
-        <div className="row">
-            <h5>Register for NOTbuy awesome products</h5>    
-        </div>
+    <div className="Register">
+        <HeaderParcial />
         <FormRegister />
     </div>
 )

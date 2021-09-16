@@ -1,9 +1,9 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 import * as productsActions from '../actions/productsActions'
 
+import Header from '../components/Header'
 import CarouselHome from '../components/CarouselHome'
 import CarouselProducts from '../components/CarouselProducts'
 import Footer from '../components/Footer'
@@ -17,15 +17,18 @@ class Home extends React.Component {
         }
     }
     render() {
-        if (this.props.productsReducer.productList.length === 0) {
-            return <Loader />
-        }
         return (
-            <div className="container">
-                <CarouselHome />
-                <CarouselProducts products={this.props.productsReducer.productList}/>
-                <Footer />
-            </div>    
+            <>
+                <Header />
+                { this.props.productsReducer.productList.length === 0 
+                    ? <Loader /> 
+                    : <div className="container">
+                        <CarouselHome />
+                        <CarouselProducts products={this.props.productsReducer.productList}/>
+                        <Footer />
+                    </div>
+                }
+            </>    
         )
     }
 } 

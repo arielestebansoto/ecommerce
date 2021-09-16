@@ -22,7 +22,6 @@ import Header from '../components/Header'
 const App = () => {
     return (
     <BrowserRouter>
-        <Header />
         <Switch>
             <Route exact path="/" component={Home}/>
             <Route exact path="/login" component={Login}/> 
