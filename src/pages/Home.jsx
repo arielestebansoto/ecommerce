@@ -22,11 +22,11 @@ class Home extends React.Component {
                 <Header />
                 { this.props.productsReducer.productList.length === 0 
                     ? <Loader /> 
-                    : <div className="container">
+                    : <>
                         <CarouselHome />
                         <CarouselProducts products={this.props.productsReducer.productList}/>
                         <Footer />
-                    </div>
+                    </>
                 }
             </>    
         )
