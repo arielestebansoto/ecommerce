@@ -14,15 +14,17 @@ const ProductImageGalery = (props) => {
     });
   })
     return (
-      <div className="row z-depth-2">
-        <div className="carousel carousel-slider ProductImageGalery">
-          <a className="carousel-item " href="#one!"><img src={props.image} /></a>
-          <a className="carousel-item " href="#one!"><img src={props.image} /></a>
-          <a className="carousel-item " href="#one!"><img src={props.image} /></a>
-          <a className="carousel-item " href="#one!"><img src={props.image} /></a>
-          <a className="carousel-item " href="#one!"><img src={props.image} /></a>
-      </div>
-      </div>
+      // <div className="row ">
+        <div className="col s12 l8 ">
+          <div className="carousel carousel-slider ProductImageGalery z-depth-2">
+            <a className="carousel-item " href="#one!"><img src={props.image} /></a>
+            <a className="carousel-item " href="#one!"><img src={props.image} /></a>
+            <a className="carousel-item " href="#one!"><img src={props.image} /></a>
+            <a className="carousel-item " href="#one!"><img src={props.image} /></a>
+            <a className="carousel-item " href="#one!"><img src={props.image} /></a>
+        </div>
+        </div>
+      // </div>
   )
 }
 export default ProductImageGalery

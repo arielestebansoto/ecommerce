@@ -1,3 +1,15 @@
 .ProductQuestion {
-  padding: 16px;
+  padding: 32px;
+}
+.ProductQuestion .ProductQuestion_title {
+  margin-bottom: 35px;
+}
+.ProductQuestion .ProductQuestion_lastAsked {
+  margin-bottom: 16px;
+}
+.ProductAskResponse {
+  margin-bottom: 16px;
+}
+.ProductAskResponse h6 {
+  margin-bottom: 8px;
 }

@@ -1,11 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { addProductToCart } from '../actions/shoppingCartActions'
-
 import { Link } from 'react-router-dom'
 
 import '../assets/styles/components/PurchaseDetails.scss'
 import { toast } from '../utils/toast'
+import ProductStar from './ProductStar'
 
 const PurchaseDetails = (props) => {
     const { shoppingCartReducer, productsReducer } = props
@@ -27,32 +27,35 @@ const PurchaseDetails = (props) => {
         })
     }
     return (
-        <div className="row z-depth-2 PurchaseDetails">
-            <div className="row">
-                <span>$ {price}</span>
-            </div>
-            <div className="row">
-                <span>Stock available: {id}</span>
-            </div>
-            <div className="row">
-                <Link to="/shoppingcart">
-                    <button 
-                        className="btn waves-effect waves-light blue darken-2 btn-large" 
-                        type="submit" 
-                        name="buy">
-                            Buy
-                </button>
-                </Link>
-            </div>
-            <div className="row">
-                    <button 
-                        className="btn waves-effect waves-light blue lighten-1 " 
-                        type="submit" 
-                        name="addCart"
-                        onClick={ handleAddProductToCart }
-                    >
-                            Add to cart
+        <div className="col s12 l4 ">
+            <div className="PurchaseDetails z-depth-2">
+                <ProductStar />
+                <div className="row">
+                    <span>$ {price}</span>
+                </div>
+                <div className="row">
+                    <span>Stock available: {id}</span>
+                </div>
+                <div className="row">
+                    <Link to="/shoppingcart">
+                        <button 
+                            className="btn waves-effect waves-light blue darken-2 btn-large" 
+                            type="submit" 
+                            name="buy">
+                                Buy
                     </button>
+                    </Link>
+                </div>
+                <div className="row">
+                        <button 
+                            className="btn waves-effect waves-light blue lighten-1 " 
+                            type="submit" 
+                            name="addCart"
+                            onClick={ handleAddProductToCart }
+                        >
+                                Add to cart
+                        </button>
+                </div>
             </div>
         </div>
     )

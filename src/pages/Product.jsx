@@ -1,8 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+import '../assets/styles/pages/Product.scss'
 import Header from '../components/Header'
-import ProductStar from '../components/ProductStar'
 import ProductImageGalery from '../components/ProductImageGalery'
 import PurchaseDetails from '../components/PurchaseDetails'
 import ProductDetails from '../components/ProductDetails'
@@ -26,10 +26,11 @@ class Product extends React.Component {
             loading ? <Loader /> : product ? 
                 <>
                     <div className="container">
-                        <h5>{product.title}</h5>
-                        <ProductStar />
-                        <ProductImageGalery image={ product.image }/> 
-                        <PurchaseDetails {...product} />
+                        <h5 className="Product_title">{product.title}</h5>
+                        <div className="row">
+                            <ProductImageGalery image={ product.image }/> 
+                            <PurchaseDetails {...product} />
+                        </div>
                         <ProductDetails {...product}/>
                         <ProductQuestion />
                     </div>
