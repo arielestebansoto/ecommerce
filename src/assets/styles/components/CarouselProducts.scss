@@ -1,6 +1,6 @@
 .CarouselProducts {
   margin-block-end: 24px;
-  height: 300px;
+  height: 420px;
 }
 .CarouselProducts .carousel-item {
   height: 300px;
@@ -11,9 +11,20 @@
   overflow: hidden;
   white-space: nowrap;
 }
+.CarouselProducts .card .card-content {
+  position:absolute;
+  bottom: 0;
+  width: 200px;
+}
+.CarouselProducts .card .card-image {
+  padding-top: 30px;
+}
 .CarouselProducts .card .card-image img {
   width: auto;
-  height: 175px;
+  height: 150px;
   left: 50%;
   transform: translateX(-50%);
+}
+.CarouselProducts ul.indicators li {
+  box-shadow: 0 4px 4px rgba(0, 0, 0, .3);
 }

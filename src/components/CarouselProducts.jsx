@@ -10,7 +10,6 @@ class CarouselProducts extends React.Component {
         const instances = M.Carousel.init(element, {
             dist: 0,
             shift: 20,
-            indicators: true,
             noWrap: false,
         } );
         const carouselInstance = M.Carousel.getInstance(element)
@@ -26,12 +25,10 @@ class CarouselProducts extends React.Component {
         }
         render() {
         return (
-            <div className="container">
-                <div className="row">
-                    <div className="carousel CarouselProducts  z-depth-2">
-                        { this.renderProductList() }
-                    </div>  
-                </div>
+            <div className="row">
+                <div className="carousel CarouselProducts">
+                    { this.renderProductList() }
+                </div>  
             </div>
         )
     }
