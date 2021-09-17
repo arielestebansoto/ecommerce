@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { useEffect} from 'react'
 
 import '../assets/styles/components/CarouselProducts.scss'
 
 import CardProduct from './CardProduct';
 
-class CarouselProducts extends React.Component {
-    carouselConfig = () => {
+const CarouselProducts = (props) => {
+    
+    const carouselConfig = () => {
         const element = document.querySelector('.CarouselProducts');
         const instances = M.Carousel.init(element, {
             dist: 0,
@@ -15,23 +16,23 @@ class CarouselProducts extends React.Component {
         const carouselInstance = M.Carousel.getInstance(element)
         element.removeEventListener('click', carouselInstance._handleCarouselClickBound)
     }
-    componentDidMount(){
-        this.carouselConfig()
-    }
-    renderProductList = () => {
-        return this.props.products.map( 
+    useEffect( () => carouselConfig(), [])
+    window.addEventListener('resize', function () {
+        carouselConfig()
+    })
+        
+    const renderProductList = () => {
+        return props.products.map( 
             card => <CardProduct {...card} key={card.id}/>
             )
         }
-        render() {
-        return (
-            <div className="row">
-                <div className="carousel CarouselProducts">
-                    { this.renderProductList() }
-                </div>  
-            </div>
-        )
-    }
+    return (
+        <div className="row">
+            <div className="carousel CarouselProducts">
+                { renderProductList() }
+            </div>  
+        </div>
+    )
 }
 
 
