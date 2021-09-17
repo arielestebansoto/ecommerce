@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { logOutRequest } from '../actions'
@@ -6,13 +6,13 @@ import { logOutRequest } from '../actions'
 const SideNav = props => {
     const { user } = props
 
-    document.addEventListener('DOMContentLoaded', function() {
-        var elems = document.querySelectorAll('.SideNav');
+    useEffect( ()=> {
+        var elems = document.querySelectorAll('.sidenav');
         var instances = M.Sidenav.init(elems, {
             edge: 'left',
             closeOnClick: true,
         });
-    });
+    }, [])
 
     function handleLogOut() {
         props.logOutRequest()
