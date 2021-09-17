@@ -27,7 +27,7 @@ const PurchaseDetails = (props) => {
         })
     }
     return (
-        <div className="col s12 l4 ">
+        <div className="col s12 m4 ">
             <div className="PurchaseDetails z-depth-2">
                 <ProductStar />
                 <div className="row">

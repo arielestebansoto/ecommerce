@@ -14,17 +14,15 @@ const ProductImageGalery = (props) => {
     });
   })
     return (
-      // <div className="row ">
-        <div className="col s12 l8 ">
+        <div className="col s12 m8 ">
           <div className="carousel carousel-slider ProductImageGalery z-depth-2">
             <a className="carousel-item " href="#one!"><img src={props.image} /></a>
             <a className="carousel-item " href="#one!"><img src={props.image} /></a>
             <a className="carousel-item " href="#one!"><img src={props.image} /></a>
             <a className="carousel-item " href="#one!"><img src={props.image} /></a>
             <a className="carousel-item " href="#one!"><img src={props.image} /></a>
+          </div>
         </div>
-        </div>
-      // </div>
   )
 }
 export default ProductImageGalery

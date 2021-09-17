@@ -1,7 +1,7 @@
 import React from 'react'
 
+import '../assets/styles/pages/ShippingDetails.scss'
 import Header from '../components/Header'
-
 import ShippingDetailsComponent from '../components/ShippingDetailsComponent'
 
 const ShippingDetails = (props) => {
@@ -9,11 +9,21 @@ const ShippingDetails = (props) => {
         <>
             <Header />
             <div className="container">
-                <button 
-                    className="btn-flat blue-text" 
-                    onClick={ () => props.history.goBack() }
-                >Return </button>
-                <ShippingDetailsComponent />
+                <div className="row">
+                    <div className="col s10 offset-s1 m8 offset-m2 l6 offset-l3">
+                        <div className="ShippingDetails">
+                            <div className="row">
+                                <button 
+                                    className="btn-flat blue-text" 
+                                    onClick={ () => props.history.goBack() }
+                                >Return </button>
+                            </div>
+                            <div className="row">
+                                <ShippingDetailsComponent />
+                            </div>                            
+                        </div>
+                    </div>
+                </div>
             </div>
     </>
     )

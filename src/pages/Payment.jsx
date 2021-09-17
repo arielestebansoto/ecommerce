@@ -1,8 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import Header from '../components/Header'
+import '../assets/styles/pages/Payment.scss'
+
 import { paymentCompleted } from '../actions/shoppingCartActions'
+import Header from '../components/Header'
 import Sumary from '../components/Sumary'
 import Successful from '../components/global/Successful'
 
@@ -13,6 +15,7 @@ const Payment = (props) => {
     const { cart, paymentOption, shippingOption, purchaseCompleted } = props.shoppingCartReducer
    
     const handleClick = () => {
+        console.log('click')
         if (!props.userReducer.isLogin) {
             toast('Please login before the payment')
         } else if (!cart.length || !paymentOption || !shippingOption) {
@@ -28,10 +31,18 @@ const Payment = (props) => {
             {
                 purchaseCompleted ? <Successful /> :
                     <div className="container">
-                            <button className="btn-flat blue-text" onClick={ () => props.history.goBack() }>Return</button>
-                        <h5>Payment Options</h5>
-                        <Sumary />
-                        <button className="btn blue darken-2" onClick={handleClick}>BUY</button>
+                        <div className="row">
+                            <div className="col s12 m10 offset-m1 l8 offset-l2">
+                                <div className="Payment">
+                                    <div className="row">
+                                        <button className="btn-flat blue-text" onClick={ () => props.history.goBack() }>Return</button>
+                                    </div>
+                                    <div className="row">
+                                        <Sumary handleClick={handleClick}/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
             }
         </>
