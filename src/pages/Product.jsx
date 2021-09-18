@@ -14,6 +14,7 @@ import { getProduct } from '../actions/productsActions'
 
 class Product extends React.Component {
     componentDidMount() {
+        window.scroll(0, 0)
         const { productList, match: { params: { id: product_id } } }  = this.props
         this.props.getProduct(product_id, productList)
     }

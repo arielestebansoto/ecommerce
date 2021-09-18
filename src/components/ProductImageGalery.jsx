@@ -16,9 +16,7 @@ const ProductImageGalery = (props) => {
     element.removeEventListener('click', carouselInstance._handleCarouselClickBound)
   }
   useEffect( () => carouselConfig(), [])
-  window.addEventListener('resize', function(){
-    carouselConfig()
-  })
+  window.addEventListener('resize', carouselConfig)
 
     return (
         <div className="col s12 m8 ">

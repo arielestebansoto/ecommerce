@@ -12,6 +12,7 @@ import Loader from '../components/global/Loader'
 class Home extends React.Component {
 
     componentDidMount() {
+        window.scroll(0, 0)
         if(!this.props.productsReducer.productList.length) {
             this.props.getProductsLimit()
         }
