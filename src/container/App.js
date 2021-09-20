@@ -31,6 +31,7 @@ const App = (props) => {
             <Route exact path="/shoppingcart" component={ShoppingCart}/> 
             <Route exact path="/register" component={Register}/> 
             <Route exact path="/account" component={Account} />
+            <Route component={NotFound} />
             {
                 isLogin 
                     ? <> 
@@ -44,7 +45,6 @@ const App = (props) => {
                         <Route exact path="/payment" component={NotUserRegister}/> 
                     </>
             }
-            <Route component={NotFound} />
         </Switch>
     </BrowserRouter>
  )
