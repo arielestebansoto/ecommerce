@@ -29,7 +29,7 @@ const App = (props) => {
             <Route exact path="/" component={Home}/>
             <Route exact path="/login" component={Login}/> 
             <Route exact path="/product/:id" component={Product}/>
-            <Route exact path="/products" component={Products} /> 
+            <Route exact path="/products/:category/:id" component={Products} /> 
             <Route exact path="/shoppingcart" component={ShoppingCart}/> 
             <Route exact path="/register" component={Register}/> 
             <Route exact path="/account" component={Account} />

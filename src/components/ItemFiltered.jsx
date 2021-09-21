@@ -6,7 +6,7 @@ const ItemFiltered = ({ filteredProducts }) => {
 
     const renderFilteredSearch = (filteredProducts) => 
         filteredProducts.map( (product, index)  => 
-            <Link to="/products" key={index} >
+            <Link to={`/products/${product.category}/${product.id}/`} key={index} >
                 <li 
                     className="white black-text" 
                     style={{
@@ -15,6 +15,7 @@ const ItemFiltered = ({ filteredProducts }) => {
                         padding: "8px"
                     }}>
                     {product.title}
+
                 </li>
             </Link> 
             )
