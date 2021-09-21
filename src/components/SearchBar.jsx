@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
+import ItemFiltered from './ItemFiltered'
 
 const SearchBar = (props) => {
     const [filteredProducts, setFilteredProducts ] = useState([])
@@ -7,14 +8,12 @@ const SearchBar = (props) => {
     const filteredSearch = (value) => props.productList.filter( product => product.title.toLowerCase().includes(value))
         
     const handleChange = (e) => {
-        const value = e.target.value
+        let value = e.target.value
+        if (value.length == 0) {
+            value = null
+        }
+        console.log(value)
         setFilteredProducts(filteredSearch(value))
-    }
-
-    const renderFilteredSearch = () => {
-        if (filteredProducts) {
-            return filteredProducts.map( (product, index)  => <li key={index}>{product.title}</li> )
-        } 
     }
 
     return (
@@ -23,10 +22,9 @@ const SearchBar = (props) => {
                 type="text" 
                 placeholder="Search Product"
                 onChange={handleChange}
+                className="white-text"
             />
-            <ul>
-                { renderFilteredSearch() }
-            </ul>
+            <ItemFiltered filteredProducts={filteredProducts}/>
         </div>
     )
 }
