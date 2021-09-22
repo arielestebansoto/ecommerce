@@ -21,9 +21,17 @@ const Products = (props) => {
     return (
         <>
             <Header />
-            <ul>
-                { renderSearchedProducts() }
-            </ul>
+            <div className="container">
+                <div className="row">
+                    <div className="col s12 m10 offset-m1 l8 offset-l2">
+                        <div className="z-depth-2" style={{marginTop: "16px", padding: "8px 16px"}}>
+                            <ul>
+                                { renderSearchedProducts() }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </>
     )
 }
