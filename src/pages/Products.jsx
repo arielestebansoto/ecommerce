@@ -7,16 +7,16 @@ import ItemSearched from '../components/ItemSearched'
 const Products = (props) => {
     const category = props.match.params.category
     
-    const renderSearchedProducts = () => {
+    const renderSearchedProducts = () => 
         props.productList.map((product, index) => {
             if (product.category === category) {
                 console.log(product)
-                return (<ItemSearched key={index} product={product}/>)
+                return <ItemSearched key={index} product={product}/>
             } else {
                 return false
             }
         })
-    }
+
     
     return (
         <>
