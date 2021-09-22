@@ -33,8 +33,11 @@ const App = (props) => {
             <Route exact path="/shoppingcart" component={ShoppingCart}/> 
             <Route exact path="/register" component={Register}/> 
             <Route exact path="/account" component={Account} />
-            <Route component={NotFound} />
-            {
+            <Route exact path="/shippingdetails" component={ShippingDetails}/>   
+            <Route exact path="/paymentoption" component={PaymentOption}/> 
+            <Route exact path="/payment" component={Payment}/> 
+            {/* <Route component={NotFound} /> */}
+            {/* {
                 isLogin 
                     ? <> 
                         <Route exact path="/shippingdetails" component={ShippingDetails}/>   
@@ -46,7 +49,7 @@ const App = (props) => {
                         <Route exact path="/paymentoption" component={NotUserRegister}/> 
                         <Route exact path="/payment" component={NotUserRegister}/> 
                     </>
-            }
+            } */}
         </Switch>
     </BrowserRouter>
  )

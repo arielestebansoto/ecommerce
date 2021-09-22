@@ -1,8 +1,23 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
-const Account = () => 
-    <div className="container">
-        <h5>Account</h5>
-    </div>
+import Header from '../components/Header'
 
-export default Account
+const Account = (props) => {
+    const user = Object.keys(props.userReducer)
+    console.log(user)
+    return <>
+        <Header />
+        <div className="container">
+            <div className="row">
+                <div className="col">
+                    { user.map((info, index) => <h6 key={index}>{info}</h6>)}
+                </div>
+            </div>
+        </div>
+    </>
+}
+
+const mapStateToProps = ({userReducer}) => { return {userReducer}}
+
+export default connect(mapStateToProps)(Account)
