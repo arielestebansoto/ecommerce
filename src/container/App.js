@@ -24,35 +24,34 @@ import { NotUserRegister } from '../pages/NotUserRegister'
 const App = (props) => {
     const { isLogin } = props
     return (
-    <BrowserRouter>
-        <Switch>
-            <Route exact path="/" component={Home}/>
-            <Route exact path="/login" component={Login}/> 
-            <Route exact path="/product/:id" component={Product}/>
-            <Route exact path="/products/:category/:id" component={Products} /> 
-            <Route exact path="/shoppingcart" component={ShoppingCart}/> 
-            <Route exact path="/register" component={Register}/> 
-            <Route exact path="/account" component={Account} />
-            <Route exact path="/shippingdetails" component={ShippingDetails}/>   
-            <Route exact path="/paymentoption" component={PaymentOption}/> 
-            <Route exact path="/payment" component={Payment}/> 
-            {/* <Route component={NotFound} /> */}
-            {/* {
-                isLogin 
-                    ? <> 
-                        <Route exact path="/shippingdetails" component={ShippingDetails}/>   
-                        <Route exact path="/paymentoption" component={PaymentOption}/> 
-                        <Route exact path="/payment" component={Payment}/> 
-                    </>
-                    : <> 
-                        <Route exact path="/shippingdetails" component={NotUserRegister}/>   
-                        <Route exact path="/paymentoption" component={NotUserRegister}/> 
-                        <Route exact path="/payment" component={NotUserRegister}/> 
-                    </>
-            } */}
-        </Switch>
-    </BrowserRouter>
- )
+        <BrowserRouter>
+            <Switch>
+                <Route exact path="/" component={Home}/>
+                <Route exact path="/login" component={Login}/> 
+                <Route exact path="/product/:id" component={Product}/>
+                <Route exact path="/products/:category/:id" component={Products} /> 
+                <Route exact path="/shoppingcart" component={ShoppingCart}/> 
+                <Route exact path="/register" component={Register}/> 
+                <Route exact path="/account" component={Account} />
+                {
+                    isLogin 
+                    ? <Route exact path="/shippingdetails" component={ShippingDetails}/>   
+                    : <Route exact path="/shippingdetails" component={NotUserRegister}/>   
+                }
+                {
+                    isLogin
+                    ? <Route exact path="/paymentoption" component={PaymentOption}/> 
+                    : <Route exact path="/paymentoption" component={NotUserRegister}/> 
+                }
+                {
+                    isLogin
+                    ? <Route exact path="/payment" component={Payment}/> 
+                    : <Route exact path="/payment" component={NotUserRegister}/> 
+                }
+                <Route component={NotFound} />
+            </Switch>
+        </BrowserRouter>
+    )
 }
 const mapStateToProps = ({ userReducer }) => userReducer
 

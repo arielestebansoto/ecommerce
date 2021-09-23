@@ -14,8 +14,8 @@ export const NotUserRegister = () => (
                     l6 offset-l3
                     z-depth-2 white"
                 >
-                    <h4>You are not login!</h4>
-                    <h5>please <Link to='/Login'>Login</Link></h5>
+                    <h5>You are not loged!</h5>
+                    <h6>please <Link to='/Login'>Login</Link></h6>
                     <h6>or back to <Link to='/'>Home</Link></h6>
                 </div>
             </div>
