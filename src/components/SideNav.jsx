@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { logOutRequest } from '../actions'
+import { logOutRequest } from '../actions/userActions'
 
 const SideNav = props => {
     const { user } = props

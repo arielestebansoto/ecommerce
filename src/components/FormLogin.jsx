@@ -1,7 +1,7 @@
 import React from 'react'
 import '../assets/styles/components/Form.scss'
 import { connect } from 'react-redux'
-import { logRequest, loginRequest } from '../actions'
+import { logRequest, loginRequest } from '../actions/userActions'
 import { withRouter, Link } from 'react-router-dom'
 
 class FormLogin extends React.Component {

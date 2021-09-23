@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { logRequest, registerRequest } from '../actions'
+import { logRequest, registerRequest } from '../actions/userActions'
 import { withRouter } from 'react-router'
 
 import '../assets/styles/components/Form.scss'
