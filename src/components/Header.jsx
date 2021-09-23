@@ -7,6 +7,7 @@ import SendTo from './SendTo'
 import SideNav from './SideNav'
 
 import '../assets/styles/components/Header.scss'
+import SideNavTrigger from './SideNavTriger'
 
 const Header = (props) => 
 (
@@ -15,7 +16,7 @@ const Header = (props) =>
             <div className="nav-wrapper nav-fixed container">
                 <div className="row">
                     <div className="col s2">
-                        <a href="#" data-target="slide-out" className="sidenav-trigger show-on-large"><i className="material-icons">menu</i></a>
+                        <SideNavTrigger />
                     </div>
                     <div className="col s8">
                         <SearchBar />
