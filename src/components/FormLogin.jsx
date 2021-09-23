@@ -3,6 +3,7 @@ import '../assets/styles/components/Form.scss'
 import { connect } from 'react-redux'
 import { logRequest, loginRequest } from '../actions/userActions'
 import { withRouter, Link } from 'react-router-dom'
+import { toast } from '../utils/toast'
 
 class FormLogin extends React.Component {
     constructor(props) {
@@ -21,9 +22,13 @@ class FormLogin extends React.Component {
     }
     handleSubmit(event) {
         event.preventDefault()
-        this.props.loginRequest(this.state)
-        this.props.logRequest(true)
-        this.props.history.push('/')
+        if (this.state.email && this.state.password) {
+            this.props.loginRequest(this.state)
+            this.props.logRequest(true)
+            this.props.history.push('/')
+        } else {
+            toast('please enter all data')
+        }
     }
     render() {
         return (

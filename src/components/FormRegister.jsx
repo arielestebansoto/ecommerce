@@ -4,6 +4,7 @@ import { logRequest, registerRequest } from '../actions/userActions'
 import { withRouter } from 'react-router'
 
 import '../assets/styles/components/Form.scss'
+import { toast } from '../utils/toast'
 
 class FormRegister extends React.Component {
     constructor(props) {
@@ -17,6 +18,7 @@ class FormRegister extends React.Component {
         }
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
+
     }
     handleChange(event) {
         if(event.target.name === 'tou') {
@@ -30,12 +32,17 @@ class FormRegister extends React.Component {
         }
     }
     handleSubmit(event) {
+        const { firstName, lastName, email, password, tou } = this.state
         event.preventDefault()
-        this.props.registerRequest(this.state)
-        this.props.logRequest(true)
-        this.props.history.push('/')
+        if (firstName && lastName && email && password && tou ) {
+            this.props.registerRequest(this.state)
+            this.props.logRequest(true)
+            this.props.history.push('/')
+        }
+        toast('pleas enter all data')
     }
     render() {
+        console.dir(this.state)
         return (
             <>
             <div className="container-fluid">
