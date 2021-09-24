@@ -1,9 +1,9 @@
 import React from 'react'
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import '../assets/styles/components/ProductImageGalery.scss'
 
-const ProductImageGalery = (props) => {
+const ProductImageGalery = (props) => {  
   const carouselConfig = () => {
     const element = document.querySelector('.ProductImageGalery');
     const instances = M.Carousel.init(element, {
@@ -12,20 +12,37 @@ const ProductImageGalery = (props) => {
       indicators: true,
       noWrap: true,
     });
-    const carouselInstance = M.Carousel.getInstance(element)
-    element.removeEventListener('click', carouselInstance._handleCarouselClickBound)
+    
+    element.removeEventListener('click', element.M_Carousel._handleCarouselClickBound)
   }
-  useEffect( () => carouselConfig(), [])
-  window.addEventListener('resize', carouselConfig)
+  
+  useEffect( () => {
+    const element = document.querySelector('.ProductImageGalery');
+    window.addEventListener('resize', carouselConfig)
+    carouselConfig()
+    
+    return () => {
+      const options = { treshold: 1 }
+      const observer = new IntersectionObserver(callback, options)
+      observer.observe(element)
+  
+      function callback(entries, observer ) {
+        entries.forEach( entry => {
+          if (!entry.isIntersecting) {
+            window.removeEventListener('resize', carouselConfig)
+            element.M_Carousel.destroy()
+          } 
+        })
+      }
+    }
+  }, [])
 
     return (
         <div className="col s12 m8 ">
           <div className="carousel carousel-slider ProductImageGalery z-depth-2">
-            <a className="carousel-item " href="#one!"><img src={props.image} /></a>
-            <a className="carousel-item " href="#one!"><img src={props.image} /></a>
-            <a className="carousel-item " href="#one!"><img src={props.image} /></a>
-            <a className="carousel-item " href="#one!"><img src={props.image} /></a>
-            <a className="carousel-item " href="#one!"><img src={props.image} /></a>
+            {
+              [1, 2, 3, 4, 5].map( (image, index) => <a className="carousel-item " key={index} href="#one!"><img src={props.image} /></a> )
+            }
           </div>
         </div>
   )
