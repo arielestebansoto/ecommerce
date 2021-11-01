@@ -2,26 +2,24 @@ import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 
-import '../assets/styles/global.scss'
-
-import '../assets/styles/global.scss'
+import './global.scss'
 import 'materialize-css/dist/css/materialize.css'
 import "materialize-css/dist/js/materialize.js";
 
-import Home from '../pages/Home'
-import Login from '../pages/Login'
-import Product from '../pages/Product'
-import Products from '../pages/Products'
-import Payment from '../pages/Payment'
-import PaymentOption from '../pages/PaymentOption'
-import ShoppingCart from '../pages/ShoppingCart'
-import ShippingDetails from '../pages/ShippingDetails'
-import Register from '../pages/Register'
-import Account from '../pages/Account'
-import NotFound from '../pages/NotFound'
-import { NotUserRegister } from '../pages/NotUserRegister'
+import Home from '../../pages/Home'
+import Login from '../../pages/Login'
+import Product from '../../pages/Product'
+import Products from '../../pages/Products'
+import Payment from '../../pages/Payment'
+import PaymentOption from '../../pages/PaymentOption'
+import ShoppingCart from '../../pages/ShoppingCart'
+import ShippingDetails from '../../pages/ShippingDetails'
+import Register from '../../pages/Register'
+import Account from '../../pages/Account'
+import NotFound from '../../pages/NotFound'
+import { NotUserRegister } from '../../pages/NotUserRegister'
 
-const App = (props) => {
+export const App = connect(mapStateToProps)( (props) => {
     const { isLogin } = props
     return (
         <BrowserRouter>
@@ -52,7 +50,5 @@ const App = (props) => {
             </Switch>
         </BrowserRouter>
     )
-}
+})
 const mapStateToProps = ({ userReducer }) => userReducer
-
-export default connect(mapStateToProps)(App)
