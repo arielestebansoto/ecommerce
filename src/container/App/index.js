@@ -8,7 +8,7 @@ import "materialize-css/dist/js/materialize.js";
 
 import { Home } from '../../pages/Home'
 import Login from '../../pages/Login'
-import Product from '../../pages/Product'
+import { Product } from '../../pages/Product'
 import Products from '../../pages/Products'
 import Payment from '../../pages/Payment'
 import PaymentOption from '../../pages/PaymentOption'
