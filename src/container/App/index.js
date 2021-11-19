@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useReducer } from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 
@@ -19,8 +19,11 @@ import Account from '../../pages/Account'
 import NotFound from '../../pages/NotFound'
 import { NotUserRegister } from '../../pages/NotUserRegister'
 
+const mapStateToProps = ({ userReducer }) => userReducer
+
 export const App = connect(mapStateToProps)( (props) => {
     const { isLogin } = props
+
     return (
         <BrowserRouter>
             <Switch>
@@ -51,4 +54,3 @@ export const App = connect(mapStateToProps)( (props) => {
         </BrowserRouter>
     )
 })
-const mapStateToProps = ({ userReducer }) => userReducer
