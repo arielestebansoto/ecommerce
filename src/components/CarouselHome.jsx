@@ -1,29 +1,29 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 
 import '../assets/styles/components/CarouselHome.scss'
 import { CarouselItemHome } from './CarouselItemHome';
 
-const CarouselHome = () => {
-    
+export const CarouselHome = ({ carouselOferts }) => {
+
     const carouselInit = () => {
-        const elems = document.querySelectorAll('.CarouselHome');
-        const instances = M.Carousel.init(elems, {
+        const element = document.querySelector('.CarouselHome');
+        const instances = M.Carousel.init(element, {
             dist: 0,
             indicators: true,
         });
-
     }
-    useEffect( () => carouselInit() ,[])
-    
-    window.addEventListener('resize', function () {
-        carouselInit()
-    })
+
+    React.useEffect( () => {
+        carouselInit() 
+    }, [])
+
     return (
-        // <div className="row">
-            <div className="carousel CarouselHome carousel-slider">
-                { [1, 2, 3, 4, 5].map((item, index) => <CarouselItemHome key={index}/>)}
-            </div>
-        // </div>
+        <div className="carousel CarouselHome carousel-slider">
+            { 
+               carouselOferts.map(
+                   (item, index) => <CarouselItemHome key={index}/>
+                )
+            }
+        </div>
     )
 }
-export default CarouselHome

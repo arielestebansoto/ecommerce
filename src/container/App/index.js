@@ -6,7 +6,7 @@ import './global.scss'
 import 'materialize-css/dist/css/materialize.css'
 import "materialize-css/dist/js/materialize.js";
 
-import Home from '../../pages/Home'
+import { Home } from '../../pages/Home'
 import Login from '../../pages/Login'
 import Product from '../../pages/Product'
 import Products from '../../pages/Products'
