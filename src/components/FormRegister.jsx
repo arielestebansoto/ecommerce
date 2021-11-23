@@ -37,9 +37,14 @@ class FormRegister extends React.Component {
         if (firstName && lastName && email && password && tou ) {
             this.props.registerRequest(this.state)
             this.props.logRequest(true)
-            this.props.history.push('/')
+            if (this.props.shoppingCartReducer.cart.length > 0) {
+                this.props.history.push('/shoppingcart')
+            } else {
+                this.props.history.push('/')
+            }
+        } else {
+            toast('pleas enter all data')
         }
-        toast('pleas enter all data')
     }
     render() {
         console.dir(this.state)
@@ -141,4 +146,7 @@ const mapDispatchToProps = {
     registerRequest,
     logRequest,
 }
-export default withRouter(connect(null, mapDispatchToProps)(FormRegister))
+const mapStateToProps = ({ shoppingCartReducer }) => {
+    return { shoppingCartReducer }
+}
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(FormRegister))
