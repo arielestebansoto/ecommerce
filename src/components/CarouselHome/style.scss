@@ -1,0 +1,16 @@
+.CarouselHome {
+    height: 165px !important;
+    @media screen and (min-width: 658px) {
+        height: 340px !important;
+    }
+}
+.CarouselHome a.carousel-item {
+    min-height: inherit !important;
+}
+.CarouselHome picture img {
+    width: 100%;
+    height: auto;
+}
+.CarouselHome ul.indicators li {
+    box-shadow: 0 4px 4px rgba(0, 0, 0, .3);
+}

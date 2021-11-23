@@ -1,7 +1,7 @@
 import React from 'react'
 
-import '../assets/styles/components/CarouselHome.scss'
-import { CarouselItemHome } from './CarouselItemHome';
+import './style.scss'
+import { CarouselItemHome } from '../CarouselItemHome';
 
 export const CarouselHome = ({ carouselOferts }) => {
 
@@ -21,7 +21,7 @@ export const CarouselHome = ({ carouselOferts }) => {
         <div className="carousel CarouselHome carousel-slider">
             { 
                carouselOferts.map(
-                   (item, index) => <CarouselItemHome key={index}/>
+                   (item, index) => <CarouselItemHome key={index} {...item}/>
                 )
             }
         </div>

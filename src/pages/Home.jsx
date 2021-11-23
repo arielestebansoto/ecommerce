@@ -9,12 +9,13 @@ import CarouselProducts from '../components/CarouselProducts'
 import Footer from '../components/Footer'
 import Loader from '../components/global/Loader'
 
+import { carouselOferts } from '../utils/carouselOferts'
+
 const mapStateToProps = (state) => {
     return state
 }
 
 export const Home = connect(mapStateToProps, productsActions)( (props) => {
-    const carouselOferts = [1, 2, 3, 4]
     
     React.useEffect( () => {
         window.scroll(0, 0)
