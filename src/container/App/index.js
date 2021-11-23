@@ -7,15 +7,15 @@ import 'materialize-css/dist/css/materialize.css'
 import "materialize-css/dist/js/materialize.js";
 
 import { Home } from '../../pages/Home'
-import Login from '../../pages/Login'
+import { Login } from '../../pages/Login'
+import { Register } from '../../pages/Register'
 import { Product } from '../../pages/Product'
 import Products from '../../pages/Products'
 import Payment from '../../pages/Payment'
 import PaymentOption from '../../pages/PaymentOption'
-import ShoppingCart from '../../pages/ShoppingCart'
+import { ShoppingCart } from '../../pages/ShoppingCart'
 import ShippingDetails from '../../pages/ShippingDetails'
-import Register from '../../pages/Register'
-import Account from '../../pages/Account'
+import { Account } from '../../pages/Account'
 import NotFound from '../../pages/NotFound'
 import { NotUserRegister } from '../../pages/NotUserRegister'
 
@@ -34,6 +34,7 @@ export const App = connect(mapStateToProps)( (props) => {
                 <Route exact path="/shoppingcart" component={ShoppingCart}/> 
                 <Route exact path="/register" component={Register}/> 
                 <Route exact path="/account" component={Account} />
+                <Route exact path="/notregistered" component={NotUserRegister} />
                 {
                     isLogin 
                     ? <Route exact path="/shippingdetails" component={ShippingDetails}/>   

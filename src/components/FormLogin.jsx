@@ -25,7 +25,12 @@ class FormLogin extends React.Component {
         if (this.state.email && this.state.password) {
             this.props.loginRequest(this.state)
             this.props.logRequest(true)
-            this.props.history.push('/')
+            console.log(this.props.shoppingCartReducer)
+            if (this.props.shoppingCartReducer.cart.length > 0) {
+                this.props.history.push('/shoppingcart')
+            } else {
+                this.props.history.push('/')
+            }
         } else {
             toast('please enter all data')
         }
@@ -95,4 +100,7 @@ const mapDispatchToProps = {
     loginRequest,
     logRequest,
 }
-export default withRouter(connect(null, mapDispatchToProps)(FormLogin))
+const mapStateToProps = ({ shoppingCartReducer }) => {
+    return { shoppingCartReducer }
+}
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(FormLogin))
