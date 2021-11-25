@@ -38,8 +38,13 @@ export const Product =  connect(mapStateToProps, mapDispatchToProps)( (props) =>
                     <div className="container">
                         <h6 className="Product_title">{product.title}</h6>
                         <div className="row">
-                            <ProductImageGalery image={ product.image }/> 
+                            <div className="col s12 m7 ">
+                                <ProductImageGalery image={ product.image }/> 
+                            </div>
+                        <div className="col s12 m5 ">
                             <PurchaseDetails {...product} />
+                        </div>
+
                         </div>
                         <ProductDetails {...product}/>
                         <ProductQuestion />

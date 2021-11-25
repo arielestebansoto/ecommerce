@@ -37,14 +37,12 @@ const ProductImageGalery = (props) => {
     }
   }, [])
 
-    return (
-        <div className="col s12 m8 ">
-          <div className="carousel carousel-slider ProductImageGalery z-depth-2">
-            {
-              [1, 2, 3, 4, 5].map( (image, index) => <a className="carousel-item " key={index} href="#one!"><img src={props.image} /></a> )
-            }
-          </div>
-        </div>
+  return (
+    <div className="carousel carousel-slider ProductImageGalery z-depth-2">
+      {
+        [1, 2, 3, 4, 5].map( (image, index) => <a className="carousel-item " key={index} href="#one!"><img src={props.image} /></a> )
+      }
+    </div>
   )
 }
 export default ProductImageGalery

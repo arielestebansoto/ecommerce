@@ -41,38 +41,36 @@ export const PurchaseDetails = withRouter(connect(mapStateToProps, mapDispatchTo
     }
 
     return (
-        <div className="col s12 m4 ">
-            <div className="PurchaseDetails z-depth-2">
-                <ProductStar rate={rate}/>
+        <div className="PurchaseDetails z-depth-2">
+            <ProductStar rate={rate}/>
 
-                <div className="row">
-                    <span className="Price">$ {price}</span>
-                </div>
+            <div className="row">
+                <span className="Price">$ {price}</span>
+            </div>
 
-                <div className="row">
-                    <span>Stock available: {count}</span>
-                </div>
-                
-                <div className="row">
-                    <button 
-                        className="btn waves-effect waves-light blue darken-2" 
-                        type="submit" 
-                        name="buy"
-                        onClick={ handleAddProductToCart }
+            <div className="row">
+                <span>Stock available: {count}</span>
+            </div>
+            
+            <div className="row">
+                <button 
+                    className="btn waves-effect waves-light blue darken-2" 
+                    type="submit" 
+                    name="buy"
+                    onClick={ handleAddProductToCart }
+                >
+                        Buy
+                </button>
+            </div>
+            <div className="row">
+                <button 
+                    className="btn waves-effect waves-light blue lighten-1 " 
+                    type="submit" 
+                    name="addCart"
+                    onClick={ handleAddProductToCart }
                     >
-                            Buy
-                    </button>
-                </div>
-                <div className="row">
-                    <button 
-                        className="btn waves-effect waves-light blue lighten-1 " 
-                        type="submit" 
-                        name="addCart"
-                        onClick={ handleAddProductToCart }
-                        >
-                            Add to cart
-                    </button>
-                </div>
+                        Add to cart
+                </button>
             </div>
         </div>
     )
