@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import '../assets/styles/components/Form.scss'
+import './FormLogin/style.scss'
 
 const FormAccount = (props) => {
     const { firstName, lastName, email } = props.userReducer
