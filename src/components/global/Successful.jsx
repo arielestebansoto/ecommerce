@@ -8,10 +8,11 @@ class Successful extends React.Component {
         super()
         setTimeout( ()=> {this.props.history.push('/')}, 3000)
     }
+
     render() {
         return (
-            <div className="center">
-                <i className="material-icons red-text large">check</i>
+            <div className="center Success">
+                <i className="material-icons large">check</i>
                 <h6>Your purchase has been successful</h6>
             </div>
         )

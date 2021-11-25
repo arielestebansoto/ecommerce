@@ -1,20 +1,25 @@
-    label span::after {
-    background-color: red!important;
-    border-color: red!important;
+$secondary-color: #ffe600;
+
+label span::after {
+    background-color: $secondary-color!important;
+    border-color: $secondary-color!important;
 }
 
 input:focus,
-.input-field input[type=text]:focus {
-    border-bottom-color: red!important;
-    box-shadow:0 1px 0 0 red!important;
+.input-field input[type=text]:focus,
+.input-field .valid {
+    border-bottom-color: $secondary-color!important;
+    box-shadow:0 1px 0 0 $secondary-color!important;
 }
+
 .input-field input:focus + label.active,
 .input-field input[type=text]:focus + label.active
 // textarea.materialize-textarea:focus:not([readonly]) + label 
 {
-    color: red !important
+    color: darken($secondary-color, 10) !important;
 }
+
 [type=checkbox]:checked + span:not(.lever):before {
-    border-right: 2px solid red!important;
-    border-bottom: 2px solid red!important;
+    border-right: 2px solid $secondary-color!important;
+    border-bottom: 2px solid $secondary-color!important;
 }

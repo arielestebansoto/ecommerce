@@ -25,7 +25,7 @@ const Header = (props) =>
                     <Link to="/shoppingcart">
                         {
                             props.cart.length > 0 ?
-                            <i className="material-icons red-text">add_shopping_cart</i>
+                            <i className="material-icons yellow-text">add_shopping_cart</i>
                             : <i className="material-icons">shopping_cart</i>
                             
                         }
