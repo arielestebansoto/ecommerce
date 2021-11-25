@@ -2,9 +2,9 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
 
-import Header from '../../components/Header'
-import CardShoppingCart from '../../components/CardShoppingCart'
-import NoProduct from '../../components/global/NoProduct'
+import { Header } from '../../components/Header'
+import { CardShoppingCart } from '../../components/CardShoppingCart'
+import { NoProduct } from '../../components/NoProduct'
 
 const mapStateToProps = ( { shoppingCartReducer, userReducer } ) => {
     return { shoppingCartReducer, userReducer }

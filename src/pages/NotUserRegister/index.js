@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './styles.scss'
-import HeaderParcial from '../../components/HeaderParcial'
+import { HeaderParcial } from '../../components/HeaderParcial'
 
 export const NotUserRegister = () => (
     <> 

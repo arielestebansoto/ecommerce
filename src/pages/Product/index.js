@@ -2,17 +2,17 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import './styles.scss'
-import Header from '../../components/Header'
-import ProductImageGalery from '../../components/ProductImageGalery'
+import { Header } from '../../components/Header'
+import { ProductImageGalery } from '../../components/ProductImageGalery'
 import { PurchaseDetails } from '../../components/PurchaseDetails'
-import ProductDetails from '../../components/ProductDetails'
-import ProductQuestion from '../../components/ProductQuestion'
-import Footer from '../../components/Footer'
-import Loader from '../../components/global/Loader'
+import { ProductDetails } from '../../components/ProductDetails'
+import { ProductQuestion } from '../../components/ProductQuestion'
+import { Footer } from '../../components/Footer'
+import { Loader } from '../../components/Loader'
 
 import { getProduct } from '../../actions/productsActions'
 
-const mapStateToProps = ({productsReducer}) => {
+const mapStateToProps = ({ productsReducer }) => {
     return productsReducer
 }
 const mapDispatchToProps = {
