@@ -1,7 +1,7 @@
 .CarouselHome {
-    height: 165px !important;
-    @media screen and (min-width: 658px) {
-        height: 340px !important;
+    height: calc(100vw / 2.19)!important;
+    @media screen and (min-width: 600px) {
+        height: calc(100vw / 4.7)!important;
     }
 }
 .CarouselHome a.carousel-item {
