@@ -15,7 +15,7 @@ export const HeaderParcial = () => (
                         <SideNavTrigger />
                     </div>
                     <div className="col s11">
-                        <Link to='/' className="white-text">NOCommerce</Link>
+                        <Link to='/' className="white-text">Ecommerce</Link>
                     </div>
                 </div>
             </div>

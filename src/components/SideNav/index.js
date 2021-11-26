@@ -54,10 +54,14 @@ export const SideNav = connect(mapStateToProps, mapDispatchToProps)( (props) => 
             <li className="sidenav-close"><Link to="/"><i className="material-icons">home</i>Home</Link></li>
             <li><div className="divider"></div></li>
             {
-                user.isLogin ?
+                user.isLogin ? <>
                     <li className="sidenav-close" onClick={handleLogOut}><a><i className="material-icons">exit_to_app</i>Logout</a></li>
+                    <li><div className="divider"></div></li>
+                </>
                 : null
             }
+                <li className="sidenav-close"><Link to="/about"><i className="material-icons">store</i>About the page</Link></li>
+
         </ul>
     )
 })

@@ -18,6 +18,7 @@ import { ShippingDetails } from '../../pages/ShippingDetails'
 import { Account } from '../../pages/Account'
 import { NotFound } from '../../pages/NotFound'
 import { NotUserRegister } from '../../pages/NotUserRegister'
+import { About } from '../../pages/About'
 
 const mapStateToProps = ({ userReducer }) => userReducer
 
@@ -35,6 +36,7 @@ export const App = connect(mapStateToProps)( (props) => {
                 <Route exact path="/register" component={Register}/> 
                 <Route exact path="/account" component={Account} />
                 <Route exact path="/notregistered" component={NotUserRegister} />
+                <Route exact path="/about" component={About} />
                 {
                     isLogin 
                     ? <Route exact path="/shippingdetails" component={ShippingDetails}/>   
