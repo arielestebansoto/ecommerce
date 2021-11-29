@@ -22,13 +22,15 @@ import { About } from '../../pages/About'
 
 const mapStateToProps = ({ userReducer }) => userReducer
 
+const homePaths = ['/', 'https://arielestebansoto.github.io/ecommerce/']
+
 export const App = connect(mapStateToProps)( (props) => {
     const { isLogin } = props
 
     return (
         <BrowserRouter>
             <Switch>
-                <Route exact path="/" component={Home}/>
+                <Route exact path={homePaths} component={Home}/>
                 <Route exact path="/login" component={Login}/> 
                 <Route exact path="/product/:id" component={Product}/>
                 <Route exact path="/products/:category/:id" component={Products} /> 
