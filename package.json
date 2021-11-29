@@ -1,5 +1,5 @@
 {
-  "homepage":"https://yourusername.github.io/repository-name",
+  "homepage": "https://yourusername.github.io/repository-name",
   "name": "react-snippet",
   "version": "1.0.0",
   "description": "react snippet for DRY, with materialize",
@@ -37,7 +37,6 @@
     "html-loader": "^2.1.2",
     "materialize-css": "^1.0.0-rc.2",
     "mini-css-extract-plugin": "^2.1.0",
-    "react-router-dom": "^5.2.0",
     "sass": "^1.35.2",
     "sass-loader": "^12.1.0",
     "webpack": "^5.44.0",
@@ -49,6 +48,7 @@
     "html-webpack-plugin": "^5.3.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-router-dom": "^5.3.0",
     "react-redux": "^7.2.4",
     "redux": "^4.1.1",
     "redux-thunk": "^2.3.0"
